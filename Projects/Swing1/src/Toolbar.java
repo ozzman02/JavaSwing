@@ -10,7 +10,7 @@ public class Toolbar extends JPanel implements ActionListener {
 	
 	private JButton helloButton;
 	private JButton goodbyeButton;
-	private TextPanel textPanel;
+	private StringListener textListener;
 	
 	public Toolbar() {
 		
@@ -26,8 +26,8 @@ public class Toolbar extends JPanel implements ActionListener {
 		add(goodbyeButton);
 	}
 	
-	public void setTextPanel(TextPanel textPanel) {
-		this.textPanel = textPanel;
+	public void setStringListener(StringListener listener) {
+		this.textListener = listener;
 	}
 
 	@Override
@@ -36,9 +36,13 @@ public class Toolbar extends JPanel implements ActionListener {
 		JButton clicked = (JButton) e.getSource();
 		
 		if (clicked == helloButton) {
-			textPanel.appendText("Hello\n");
+			if (textListener != null) {
+				textListener.textEmitted("Hello\n");
+			}
 		} else if (clicked == goodbyeButton) {
-			textPanel.appendText("Good Bye\n");
+			if (textListener != null) {
+				textListener.textEmitted("Good Bye\n");
+			}
 		}
 		
 	}

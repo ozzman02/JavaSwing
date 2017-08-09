@@ -1,8 +1,4 @@
 import java.awt.BorderLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
-import javax.swing.JButton;
 import javax.swing.JFrame;
 
 @SuppressWarnings("serial")
@@ -20,7 +16,12 @@ public class MainFrame extends JFrame {
 		
 		textPanel = new TextPanel();
 		toolBar = new Toolbar();
-		toolBar.setTextPanel(textPanel);
+		
+		toolBar.setStringListener(new StringListener() {
+			public void textEmitted(String text) {
+				textPanel.appendText(text);
+			}
+		});
 		
 		add(toolBar, BorderLayout.NORTH);
 		add(textPanel, BorderLayout.CENTER);
