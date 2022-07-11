@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e04f7cf-c0b6-4739-97c4-6cec31cdae4f" name="Changes" comment="setting borders">
+    <list default="true" id="9e04f7cf-c0b6-4739-97c4-6cec31cdae4f" name="Changes" comment="text fields and labels">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/FormPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FormPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -126,7 +127,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657569667032</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="text fields and labels">
+      <created>1657570131546</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1657570131546</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -150,7 +158,8 @@
     <MESSAGE value="listeners and events" />
     <MESSAGE value="setting component sizes" />
     <MESSAGE value="setting borders" />
-    <option name="LAST_COMMIT_MESSAGE" value="setting borders" />
+    <MESSAGE value="text fields and labels" />
+    <option name="LAST_COMMIT_MESSAGE" value="text fields and labels" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>
