@@ -5,9 +5,9 @@ import java.awt.event.ActionListener;
 
 public class Toolbar extends JPanel implements ActionListener {
 
-    private JButton helloBtn;
-    private JButton goodByeBtn;
-    private TextPanel textPanel;
+    private final JButton helloBtn;
+    private final JButton goodByeBtn;
+    private TextListener textListener;
 
     public Toolbar() {
         helloBtn = new JButton("Hello");
@@ -19,17 +19,21 @@ public class Toolbar extends JPanel implements ActionListener {
         add(goodByeBtn);
     }
 
-    public void setTextPanel(TextPanel textPanel) {
-        this.textPanel = textPanel;
+    public void setTextListener(TextListener listener) {
+        this.textListener = listener;
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         JButton clicked = (JButton) e.getSource();
         if (clicked == helloBtn) {
-            textPanel.appendText("Hello\n");
+            if (textListener != null) {
+                textListener.textEmitted("Hello\n");
+            }
         } else if (clicked == goodByeBtn) {
-            textPanel.appendText("Good Bye\n");
+            if (textListener != null) {
+                textListener.textEmitted("Good Bye\n");
+            }
         }
     }
 }
