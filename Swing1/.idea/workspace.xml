@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e04f7cf-c0b6-4739-97c4-6cec31cdae4f" name="Changes" comment="text fields and labels">
+    <list default="true" id="9e04f7cf-c0b6-4739-97c4-6cec31cdae4f" name="Changes" comment="laying out controls with GridBagLayout">
+      <change afterPath="$PROJECT_DIR$/src/FormEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/FormEventListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/FormPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FormPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainFrame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,8 +19,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -134,7 +137,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657570131546</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="laying out controls with GridBagLayout">
+      <created>1657572806864</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1657572806864</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -159,7 +169,8 @@
     <MESSAGE value="setting component sizes" />
     <MESSAGE value="setting borders" />
     <MESSAGE value="text fields and labels" />
-    <option name="LAST_COMMIT_MESSAGE" value="text fields and labels" />
+    <MESSAGE value="laying out controls with GridBagLayout" />
+    <option name="LAST_COMMIT_MESSAGE" value="laying out controls with GridBagLayout" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>
