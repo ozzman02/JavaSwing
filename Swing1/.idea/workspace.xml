@@ -1,12 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e04f7cf-c0b6-4739-97c4-6cec31cdae4f" name="Changes" comment="laying out controls with GridBagLayout">
-      <change afterPath="$PROJECT_DIR$/src/FormEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/FormEventListener.java" afterDir="false" />
+    <list default="true" id="9e04f7cf-c0b6-4739-97c4-6cec31cdae4f" name="Changes" comment="custom events and form submission">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/FormPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FormPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainFrame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,7 +141,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657572806864</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="custom events and form submission">
+      <created>1657576125397</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1657576125397</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -170,7 +174,8 @@
     <MESSAGE value="setting borders" />
     <MESSAGE value="text fields and labels" />
     <MESSAGE value="laying out controls with GridBagLayout" />
-    <option name="LAST_COMMIT_MESSAGE" value="laying out controls with GridBagLayout" />
+    <MESSAGE value="custom events and form submission" />
+    <option name="LAST_COMMIT_MESSAGE" value="custom events and form submission" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>
