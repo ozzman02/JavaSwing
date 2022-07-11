@@ -17,10 +17,12 @@ public class MainFrame extends JFrame {
         btn = new JButton("Click Me");
         textPanel = new TextPanel();
 
+        toolbar.setTextPanel(textPanel);
+
         btn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                textPanel.appendText("Hello\n");
+                textPanel.appendText("Learning Swing !\n");
             }
         });
 
