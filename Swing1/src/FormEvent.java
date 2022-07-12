@@ -8,6 +8,8 @@ public class FormEvent extends EventObject {
 
     private int ageCategoryId;
 
+    private String employmentCategory;
+
     /**
      * Constructs a prototypical Event.
      *
@@ -18,11 +20,13 @@ public class FormEvent extends EventObject {
         super(source);
     }
 
-    public FormEvent(Object source, String name, String occupation, int ageCategoryId) {
+    public FormEvent(Object source, String name, String occupation, int ageCategoryId,
+                     String employmentCategory) {
         super(source);
         this.name = name;
         this.occupation = occupation;
         this.ageCategoryId = ageCategoryId;
+        this.employmentCategory = employmentCategory;
     }
 
     public String getName() {
@@ -47,5 +51,13 @@ public class FormEvent extends EventObject {
 
     public void setAgeCategoryId(int ageCategoryId) {
         this.ageCategoryId = ageCategoryId;
+    }
+
+    public String getEmploymentCategory() {
+        return employmentCategory;
+    }
+
+    public void setEmploymentCategory(String employmentCategory) {
+        this.employmentCategory = employmentCategory;
     }
 }
