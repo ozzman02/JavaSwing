@@ -29,8 +29,10 @@ public class MainFrame extends JFrame {
                 String occupation = formEvent.getOccupation();
                 int ageCategoryId = formEvent.getAgeCategoryId();
                 String employmentCategory = formEvent.getEmploymentCategory();
+                String taxId = formEvent.getTaxId();
+                boolean usCitizen = formEvent.isUsCitizen();
                 textPanel.appendText(name + ": " + occupation + ": " + ageCategoryId + ": "
-                        + employmentCategory + "\n");
+                        + employmentCategory + ": " + taxId + ": " + usCitizen + "\n");
             }
         });
 
