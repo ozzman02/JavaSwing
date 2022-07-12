@@ -4,7 +4,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 
+import static java.awt.event.ActionEvent.CTRL_MASK;
+
 public class MainFrame extends JFrame {
+
+    private static final String EXIT_CONFIRMATION_MESSAGE = "Do you really want to exit the application?";
+    private static final String EXIT_CONFIRMATION_TITLE = "Confirm Exit";
 
     private TextPanel textPanel;
     private Toolbar toolbar;
@@ -48,6 +53,7 @@ public class MainFrame extends JFrame {
         add(textPanel, BorderLayout.CENTER);
 
         setSize(600, 500);
+        setMinimumSize(new Dimension(500, 400));
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
     }
@@ -85,12 +91,16 @@ public class MainFrame extends JFrame {
 
         fileMenu.setMnemonic(KeyEvent.VK_F);
         exitItem.setMnemonic(KeyEvent.VK_X);
-        exitItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_X, ActionEvent.CTRL_MASK));
+        exitItem.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_X, CTRL_MASK));
 
         exitItem.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.exit(0);
+                int action = JOptionPane.showConfirmDialog(MainFrame.this, EXIT_CONFIRMATION_MESSAGE,
+                        EXIT_CONFIRMATION_TITLE , JOptionPane.OK_CANCEL_OPTION);
+                if (action == JOptionPane.OK_OPTION) {
+                    System.exit(0);
+                }
             }
         });
 
