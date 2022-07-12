@@ -14,6 +14,8 @@ public class FormEvent extends EventObject {
 
     private boolean usCitizen;
 
+    private String gender;
+
     /**
      * Constructs a prototypical Event.
      *
@@ -25,7 +27,7 @@ public class FormEvent extends EventObject {
     }
 
     public FormEvent(Object source, String name, String occupation, int ageCategoryId,
-                     String employmentCategory, String taxId, boolean usCitizen) {
+                     String employmentCategory, String taxId, boolean usCitizen, String gender) {
         super(source);
         this.name = name;
         this.occupation = occupation;
@@ -33,6 +35,7 @@ public class FormEvent extends EventObject {
         this.employmentCategory = employmentCategory;
         this.taxId = taxId;
         this.usCitizen = usCitizen;
+        this.gender = gender;
     }
 
     public String getName() {
@@ -82,5 +85,9 @@ public class FormEvent extends EventObject {
     public void setUsCitizen(boolean usCitizen) {
         this.usCitizen = usCitizen;
     }
+
+    public String getGender() { return gender; }
+
+    public void setGender(String gender) { this.gender = gender; }
 
 }
