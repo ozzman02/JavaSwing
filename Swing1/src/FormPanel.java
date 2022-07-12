@@ -3,6 +3,7 @@ import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.KeyEvent;
 
 public class FormPanel extends JPanel {
 
@@ -47,6 +48,10 @@ public class FormPanel extends JPanel {
         maleRadio = new JRadioButton("male");
         femaleRadio = new JRadioButton("female");
         genderGroup = new ButtonGroup();
+
+        okBtn.setMnemonic(KeyEvent.VK_O);
+        nameLabel.setDisplayedMnemonic(KeyEvent.VK_N);
+        nameLabel.setLabelFor(nameField);
 
         genderGroup.add(maleRadio);
         genderGroup.add(femaleRadio);
