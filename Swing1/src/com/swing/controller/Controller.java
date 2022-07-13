@@ -3,6 +3,8 @@ package com.swing.controller;
 import com.swing.gui.FormEvent;
 import com.swing.model.*;
 
+import java.util.List;
+
 public class Controller {
 
     private final Database database = new Database();
@@ -18,11 +20,11 @@ public class Controller {
                 formEvent.isUsCitizen(),
                 Gender.getValueOf(formEvent.getGender())
         );
-
         database.addPerson(person);
-        System.out.println(database);
     }
 
-
+    public List<Person> getPeople() {
+        return database.getPeople();
+    }
 
 }
