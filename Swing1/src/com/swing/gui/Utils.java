@@ -1,3 +1,5 @@
+package com.swing.gui;
+
 public class Utils {
 
     public static String getFileExtension(String name) {

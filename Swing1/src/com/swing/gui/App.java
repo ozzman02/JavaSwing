@@ -1,3 +1,5 @@
+package com.swing.gui;
+
 import javax.swing.*;
 
 public class App {

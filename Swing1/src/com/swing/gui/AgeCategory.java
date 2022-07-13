@@ -1,3 +1,5 @@
+package com.swing.gui;
+
 public class AgeCategory {
 
     private int id;

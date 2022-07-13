@@ -1,11 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e04f7cf-c0b6-4739-97c4-6cec31cdae4f" name="Changes" comment="open and save file dialogs">
-      <change afterPath="$PROJECT_DIR$/src/PersonFileFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Utils.java" afterDir="false" />
+    <list default="true" id="9e04f7cf-c0b6-4739-97c4-6cec31cdae4f" name="Changes" comment="filtering file choosers">
+      <change afterPath="$PROJECT_DIR$/src/com/swing/model/AgeCategory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/swing/model/Database.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/swing/model/EmploymentCategory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/swing/model/Gender.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/swing/model/Person.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MainFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AgeCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/swing/gui/AgeCategory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/swing/gui/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FormEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/swing/gui/FormEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FormEventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/swing/gui/FormEventListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FormPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/swing/gui/FormPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/swing/gui/MainFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PersonFileFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/swing/gui/PersonFileFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TextListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/swing/gui/TextListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TextPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/swing/gui/TextPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Toolbar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/swing/gui/Toolbar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/swing/gui/Utils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +32,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -51,8 +65,8 @@
   }
 }</component>
   <component name="RunManager">
-    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="App" />
+    <configuration name="com.swing.gui.App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.swing.gui.App" />
       <module name="Swing1" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -60,7 +74,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.App" />
+        <item itemvalue="Application.com.swing.gui.App" />
       </list>
     </recent_temporary>
   </component>
@@ -220,7 +234,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657684927931</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="filtering file choosers">
+      <created>1657687822097</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1657687822097</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -257,18 +278,8 @@
     <MESSAGE value="mnemonics and accelerators" />
     <MESSAGE value="message boxes" />
     <MESSAGE value="open and save file dialogs" />
-    <option name="LAST_COMMIT_MESSAGE" value="open and save file dialogs" />
+    <MESSAGE value="filtering file choosers" />
+    <option name="LAST_COMMIT_MESSAGE" value="filtering file choosers" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/Utils.java</url>
-          <line>3</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

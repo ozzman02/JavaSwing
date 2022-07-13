@@ -1,3 +1,5 @@
+package com.swing.gui;
+
 import java.util.EventObject;
 
 public class FormEvent extends EventObject {
