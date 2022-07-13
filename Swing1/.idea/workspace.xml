@@ -1,24 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e04f7cf-c0b6-4739-97c4-6cec31cdae4f" name="Changes" comment="filtering file choosers">
-      <change afterPath="$PROJECT_DIR$/src/com/swing/model/AgeCategory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/swing/model/Database.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/swing/model/EmploymentCategory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/swing/model/Gender.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/swing/model/Person.java" afterDir="false" />
+    <list default="true" id="9e04f7cf-c0b6-4739-97c4-6cec31cdae4f" name="Changes" comment="model-view-controller: creating a data model">
+      <change afterPath="$PROJECT_DIR$/src/com/swing/controller/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AgeCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/swing/gui/AgeCategory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/swing/gui/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FormEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/swing/gui/FormEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FormEventListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/swing/gui/FormEventListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FormPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/swing/gui/FormPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/swing/gui/MainFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PersonFileFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/swing/gui/PersonFileFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TextListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/swing/gui/TextListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/TextPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/swing/gui/TextPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Toolbar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/swing/gui/Toolbar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/swing/gui/Utils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/swing/gui/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/swing/gui/MainFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/swing/model/AgeCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/swing/model/AgeCategory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/swing/model/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/swing/model/Database.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/swing/model/EmploymentCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/swing/model/EmploymentCategory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/swing/model/Gender.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/swing/model/Gender.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/swing/model/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/swing/model/Person.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -241,7 +232,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657687822097</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="model-view-controller: creating a data model">
+      <created>1657735987006</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1657735987006</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -279,7 +277,8 @@
     <MESSAGE value="message boxes" />
     <MESSAGE value="open and save file dialogs" />
     <MESSAGE value="filtering file choosers" />
-    <option name="LAST_COMMIT_MESSAGE" value="filtering file choosers" />
+    <MESSAGE value="model-view-controller: creating a data model" />
+    <option name="LAST_COMMIT_MESSAGE" value="model-view-controller: creating a data model" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>

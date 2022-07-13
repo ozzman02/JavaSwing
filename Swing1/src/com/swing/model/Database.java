@@ -23,4 +23,11 @@ public class Database {
         people.add(person);
     }
 
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Database{");
+        sb.append("people=").append(people);
+        sb.append('}');
+        return sb.toString();
+    }
 }

@@ -1,5 +1,7 @@
 package com.swing.gui;
 
+import com.swing.controller.Controller;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -17,6 +19,7 @@ public class MainFrame extends JFrame {
     private Toolbar toolbar;
     private FormPanel formPanel;
     private JFileChooser fileChooser;
+    private Controller controller;
 
     public MainFrame() {
         super("Hello World");
@@ -25,6 +28,7 @@ public class MainFrame extends JFrame {
         toolbar = new Toolbar();
         textPanel = new TextPanel();
         formPanel = new FormPanel();
+        controller = new Controller();
 
         fileChooser = new JFileChooser();
         fileChooser.addChoosableFileFilter(new PersonFileFilter());
@@ -41,16 +45,7 @@ public class MainFrame extends JFrame {
         formPanel.setFormEventListener(new FormEventListener() {
             @Override
             public void formEventOccurred(FormEvent formEvent) {
-                String name = formEvent.getName();
-                String occupation = formEvent.getOccupation();
-                int ageCategoryId = formEvent.getAgeCategoryId();
-                String employmentCategory = formEvent.getEmploymentCategory();
-                String taxId = formEvent.getTaxId();
-                boolean usCitizen = formEvent.isUsCitizen();
-                String gender = formEvent.getGender();
-                textPanel.appendText(name + ": " + occupation + ": " + ageCategoryId + ": "
-                        + employmentCategory + ": " + taxId + ": " + usCitizen +
-                        ": " + gender + "\n");
+                controller.addPerson(formEvent);
             }
         });
 

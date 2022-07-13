@@ -100,4 +100,19 @@ public class Person {
     public void setGender(Gender gender) {
         this.gender = gender;
     }
+
+    @Override
+    public String toString() {
+        final StringBuilder sb = new StringBuilder("Person{");
+        sb.append("id=").append(id);
+        sb.append(", name='").append(name).append('\'');
+        sb.append(", occupation='").append(occupation).append('\'');
+        sb.append(", ageCategory=").append(ageCategory);
+        sb.append(", employmentCategory=").append(employmentCategory);
+        sb.append(", taxId='").append(taxId).append('\'');
+        sb.append(", usCitizen=").append(usCitizen);
+        sb.append(", gender=").append(gender);
+        sb.append('}');
+        return sb.toString();
+    }
 }
