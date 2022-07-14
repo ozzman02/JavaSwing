@@ -1,8 +1,12 @@
 package com.swing.model;
 
-public class Person {
+import java.io.Serializable;
 
-    public static int count = 0;
+public class Person implements Serializable {
+
+    private static final long serialVersionUID = -4600727050610034676L;
+
+    private static int count = 0;
 
     private int id;
 

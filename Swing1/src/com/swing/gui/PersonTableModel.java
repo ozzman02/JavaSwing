@@ -30,7 +30,7 @@ public class PersonTableModel extends AbstractTableModel {
 
     @Override
     public int getColumnCount() {
-        return Person.class.getDeclaredFields().length - 1;
+        return Person.class.getDeclaredFields().length - 2;
     }
 
     @Override

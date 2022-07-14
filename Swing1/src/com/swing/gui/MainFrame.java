@@ -7,6 +7,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
+import java.io.IOException;
 
 import static java.awt.event.ActionEvent.CTRL_MASK;
 
@@ -14,6 +15,11 @@ public class MainFrame extends JFrame {
 
     private static final String EXIT_CONFIRMATION_MESSAGE = "Do you really want to exit the application?";
     private static final String EXIT_CONFIRMATION_TITLE = "Confirm Exit";
+    private static final String IMPORT_ERROR_MESSAGE = "Unable to load data from file";
+    private static final String IMPORT_ERROR_MESSAGE_TITLE = "Import error";
+    private static final String EXPORT_ERROR_MESSAGE = "Unable to save data to file";
+    private static final String EXPORT_ERROR_MESSAGE_TITLE = "Export error";
+
 
     private TextPanel textPanel;
     private Toolbar toolbar;
@@ -104,7 +110,12 @@ public class MainFrame extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (fileChooser.showSaveDialog(MainFrame.this) == JFileChooser.APPROVE_OPTION) {
-                    System.out.println(fileChooser.getSelectedFile());
+                    try {
+                        controller.saveToFile(fileChooser.getSelectedFile());
+                    } catch (IOException ex) {
+                        JOptionPane.showMessageDialog(MainFrame.this, EXPORT_ERROR_MESSAGE,
+                                EXPORT_ERROR_MESSAGE_TITLE, JOptionPane.ERROR_MESSAGE);
+                    }
                 }
             }
         });
@@ -113,7 +124,13 @@ public class MainFrame extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (fileChooser.showOpenDialog(MainFrame.this) == JFileChooser.APPROVE_OPTION) {
-                    System.out.println(fileChooser.getSelectedFile());
+                    try {
+                        controller.loadFromFile(fileChooser.getSelectedFile());
+                        tablePanel.refresh();
+                    } catch (IOException | ClassNotFoundException ex) {
+                        JOptionPane.showMessageDialog(MainFrame.this, IMPORT_ERROR_MESSAGE,
+                                IMPORT_ERROR_MESSAGE_TITLE, JOptionPane.ERROR_MESSAGE);
+                    }
                 }
             }
         });
