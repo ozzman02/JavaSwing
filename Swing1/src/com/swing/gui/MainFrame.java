@@ -8,6 +8,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
+import java.util.prefs.Preferences;
 
 import static java.awt.event.ActionEvent.CTRL_MASK;
 
@@ -19,7 +20,10 @@ public class MainFrame extends JFrame {
     private static final String IMPORT_ERROR_MESSAGE_TITLE = "Import error";
     private static final String EXPORT_ERROR_MESSAGE = "Unable to save data to file";
     private static final String EXPORT_ERROR_MESSAGE_TITLE = "Export error";
-
+    private static final String USER_PREFERENCE_KEY = "user";
+    private static final String PASSWORD_PREFERENCE_KEY = "password";
+    private static final String PORT_PREFERENCE_KEY = "port";
+    private static final int PORT_PREFERENCE_DEFAULT_VALUE = 3306;
 
     private TextPanel textPanel;
     private Toolbar toolbar;
@@ -28,6 +32,7 @@ public class MainFrame extends JFrame {
     private Controller controller;
     private TablePanel tablePanel;
     private PrefsDialog prefsDialog;
+    private Preferences preferences;
 
     public MainFrame() {
         super("Hello World");
@@ -39,6 +44,7 @@ public class MainFrame extends JFrame {
         controller = new Controller();
         tablePanel = new TablePanel();
         prefsDialog = new PrefsDialog(this);
+        preferences = Preferences.userRoot().node("db");
 
         tablePanel.setData(controller.getPeople());
 
@@ -47,6 +53,21 @@ public class MainFrame extends JFrame {
                 controller.removePerson(row);
             }
         });
+
+        prefsDialog.setPrefsListener(new PrefsListener() {
+            @Override
+            public void preferencesSet(String user, String password, int port) {
+                preferences.put(USER_PREFERENCE_KEY, user);
+                preferences.put(PASSWORD_PREFERENCE_KEY, password);
+                preferences.putInt(PORT_PREFERENCE_KEY, port);
+            }
+        });
+
+        prefsDialog.setDefaults(
+                preferences.get(USER_PREFERENCE_KEY, ""),
+                preferences.get(PASSWORD_PREFERENCE_KEY, ""),
+                preferences.getInt(PORT_PREFERENCE_KEY, PORT_PREFERENCE_DEFAULT_VALUE)
+        );
 
         fileChooser = new JFileChooser();
         fileChooser.addChoosableFileFilter(new PersonFileFilter());
