@@ -37,4 +37,7 @@ public class Controller {
         database.loadFromFile(file);
     }
 
+    public void removePerson(int index) {
+        database.removePerson(index);
+    }
 }

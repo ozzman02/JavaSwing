@@ -1,8 +1,9 @@
 package com.swing.model;
 
 import java.io.*;
-import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
 
 public class Database {
@@ -10,15 +11,11 @@ public class Database {
     private List<Person> people;
 
     public Database() {
-        people = new ArrayList<>();
+        people = new LinkedList<>();
     }
 
     public List<Person> getPeople() {
-        return people;
-    }
-
-    public void setPeople(List<Person> people) {
-        this.people = people;
+        return Collections.unmodifiableList(people);
     }
 
     public void addPerson(Person person) {
@@ -48,5 +45,9 @@ public class Database {
         sb.append("people=").append(people);
         sb.append('}');
         return sb.toString();
+    }
+
+    public void removePerson(int index) {
+        people.remove(index);
     }
 }
