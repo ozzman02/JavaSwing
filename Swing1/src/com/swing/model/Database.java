@@ -1,9 +1,7 @@
 package com.swing.model;
 
 import java.io.*;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.LinkedList;
@@ -19,6 +17,7 @@ public class Database {
     private static final String CLOSE_CONNECTION_ERROR_MSG = "Can't close connection to db";
     private static final String CONNECTION_SUCCESS = "Successfully connected to database";
     private static final String DISCONNECTION_SUCCESS = "Successfully disconnected from database";
+    private static final String COUNT_PERSONS_BY_ID_QUERY = "SELECT COUNT(*) AS COUNT FROM PEOPLE WHERE ID = ?";
 
     private List<Person> people;
 
@@ -85,5 +84,17 @@ public class Database {
                 throw new Exception(CLOSE_CONNECTION_ERROR_MSG);
             }
         }
+    }
+
+    public void save() throws SQLException {
+        PreparedStatement countPersonsByIdStmt =  connection.prepareStatement(COUNT_PERSONS_BY_ID_QUERY);
+        for (Person person : people) {
+            countPersonsByIdStmt.setInt(1, person.getId());
+            ResultSet resultSet = countPersonsByIdStmt.executeQuery();
+            resultSet.next();
+            int count = resultSet.getInt(1);
+            System.out.println("Count for person with ID " + person.getId() + " is " + count);
+        }
+        countPersonsByIdStmt.close();
     }
 }
