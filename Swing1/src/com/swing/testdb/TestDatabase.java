@@ -1,8 +1,9 @@
-package com.swing.database;
+package com.swing.testdb;
 
 import com.swing.model.*;
 
 public class TestDatabase {
+
     public static void main(String[] args) {
         System.out.println("Running Database Test");
         Database db = new Database();
@@ -17,6 +18,6 @@ public class TestDatabase {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
+
 }

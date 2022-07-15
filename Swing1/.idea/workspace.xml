@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e04f7cf-c0b6-4739-97c4-6cec31cdae4f" name="Changes" comment="connecting to sql database">
+    <list default="true" id="9e04f7cf-c0b6-4739-97c4-6cec31cdae4f" name="Changes" comment="retrieving values from databases">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/swing/database/TestDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/swing/database/TestDatabase.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/swing/database/TestDatabase.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/swing/testdb/TestDatabase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/swing/model/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/swing/model/Database.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -59,13 +59,13 @@
       <recent name="com.swing.gui" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.TestDatabase">
+  <component name="RunManager" selected="Application.com.swing.testdb.TestDatabase">
     <configuration name="TestDatabase" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.swing.database.TestDatabase" />
+      <option name="MAIN_CLASS_NAME" value="com.swing.testdb.TestDatabase" />
       <module name="Swing1" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.swing.database.*" />
+          <option name="PATTERN" value="com.swing.testdb.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -82,7 +82,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.TestDatabase" />
+        <item itemvalue="Application.com.swing.testdb.TestDatabase" />
         <item itemvalue="Application.com.swing.gui.App" />
       </list>
     </recent_temporary>
@@ -341,7 +341,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657857645304</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="retrieving values from databases">
+      <created>1657860325467</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1657860325467</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -357,7 +364,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="custom events and form submission" />
     <MESSAGE value="list boxes" />
     <MESSAGE value="working with list box data" />
     <MESSAGE value="combo boxes" />
@@ -382,7 +388,8 @@
     <MESSAGE value="saving program data with preferences" />
     <MESSAGE value="arranging and designing dialogs and forms" />
     <MESSAGE value="connecting to sql database" />
-    <option name="LAST_COMMIT_MESSAGE" value="connecting to sql database" />
+    <MESSAGE value="retrieving values from databases" />
+    <option name="LAST_COMMIT_MESSAGE" value="retrieving values from databases" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
 </project>

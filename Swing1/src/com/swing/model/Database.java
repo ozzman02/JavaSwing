@@ -17,7 +17,10 @@ public class Database {
     private static final String CLOSE_CONNECTION_ERROR_MSG = "Can't close connection to db";
     private static final String CONNECTION_SUCCESS = "Successfully connected to database";
     private static final String DISCONNECTION_SUCCESS = "Successfully disconnected from database";
-    private static final String COUNT_PERSONS_BY_ID_QUERY = "SELECT COUNT(*) AS COUNT FROM PEOPLE WHERE ID = ?";
+    private static final String COUNT_PERSONS_BY_ID_SQL_STMT = "SELECT COUNT(*) AS COUNT FROM PEOPLE WHERE ID = ?";
+    private static final String INSERT_PERSON_SQL_STMT =
+            "INSERT INTO PEOPLE (id, name, occupation, age, employment_status, tax_id, us_citizen, gender) " +
+                    "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
     private List<Person> people;
 
@@ -87,14 +90,29 @@ public class Database {
     }
 
     public void save() throws SQLException {
-        PreparedStatement countPersonsByIdStmt =  connection.prepareStatement(COUNT_PERSONS_BY_ID_QUERY);
+        PreparedStatement countPersonsByIdStmt =  connection.prepareStatement(COUNT_PERSONS_BY_ID_SQL_STMT);
+        PreparedStatement insertPersonStmt = connection.prepareStatement(INSERT_PERSON_SQL_STMT);
         for (Person person : people) {
             countPersonsByIdStmt.setInt(1, person.getId());
             ResultSet resultSet = countPersonsByIdStmt.executeQuery();
             resultSet.next();
             int count = resultSet.getInt(1);
-            System.out.println("Count for person with ID " + person.getId() + " is " + count);
+            if (count == 0) {
+                System.out.println("Inserting person with ID " + person.getId());
+                insertPersonStmt.setInt(1, person.getId());
+                insertPersonStmt.setString(2, person.getName());
+                insertPersonStmt.setString(3, person.getOccupation());
+                insertPersonStmt.setString(4, person.getAgeCategory().name());
+                insertPersonStmt.setString(5, person.getEmploymentCategory().name());
+                insertPersonStmt.setString(6, person.getTaxId());
+                insertPersonStmt.setBoolean(7, person.isUsCitizen());
+                insertPersonStmt.setString(8, person.getGender().name());
+                insertPersonStmt.executeUpdate();
+            } else {
+                System.out.println("Updating person with ID " + person.getId());
+            }
         }
+        insertPersonStmt.close();
         countPersonsByIdStmt.close();
     }
 }
