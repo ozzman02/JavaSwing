@@ -23,7 +23,7 @@ public enum AgeCategory {
         this.value = value;
     }
 
-    public static AgeCategory valueOf(int value) {
+    public static AgeCategory getValueOf(int value) {
         return ageCategoryMap.get(value);
     }
 

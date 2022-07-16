@@ -16,11 +16,11 @@ public class Controller {
         Person person = new Person(
                 formEvent.getName(),
                 formEvent.getOccupation(),
-                AgeCategory.valueOf(formEvent.getAgeCategoryId()),
+                AgeCategory.getValueOf(formEvent.getAgeCategoryId()),
                 EmploymentCategory.getValueOf(formEvent.getEmploymentCategory()),
                 formEvent.getTaxId(),
                 formEvent.isUsCitizen(),
-                Gender.getValueOf(formEvent.getGender())
+                Gender.valueOf(formEvent.getGender().toUpperCase())
         );
         database.addPerson(person);
     }

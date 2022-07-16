@@ -14,6 +14,7 @@ public class TestDatabase {
         try {
             db.connect();
             db.save();
+            db.load();
             db.disconnect();
         } catch (Exception e) {
             e.printStackTrace();

@@ -27,6 +27,19 @@ public class Person implements Serializable {
     public Person() {
     }
 
+    public Person(int id, String name, String occupation, AgeCategory ageCategory,
+                  EmploymentCategory employmentCategory, String taxId,
+                  boolean usCitizen, Gender gender) {
+        this.id = id;
+        this.name = name;
+        this.occupation = occupation;
+        this.ageCategory = ageCategory;
+        this.employmentCategory = employmentCategory;
+        this.taxId = taxId;
+        this.usCitizen = usCitizen;
+        this.gender = gender;
+    }
+
     public Person(String name, String occupation, AgeCategory ageCategory,
                   EmploymentCategory employmentCategory, String taxId,
                   boolean usCitizen, Gender gender) {

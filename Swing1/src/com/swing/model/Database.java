@@ -18,9 +18,24 @@ public class Database {
     private static final String CONNECTION_SUCCESS = "Successfully connected to database";
     private static final String DISCONNECTION_SUCCESS = "Successfully disconnected from database";
     private static final String COUNT_PERSONS_BY_ID_SQL_STMT = "SELECT COUNT(*) AS COUNT FROM PEOPLE WHERE ID = ?";
+
     private static final String INSERT_PERSON_SQL_STMT =
             "INSERT INTO PEOPLE (id, name, occupation, age, employment_status, tax_id, us_citizen, gender) " +
                     "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+
+    private static final String UPDATE_PEOPLE_SQL_STMT =
+            "UPDATE PEOPLE SET name = ?, occupation = ?, age = ?, employment_status = ?, tax_id = ?, us_citizen = ?, gender = ? WHERE id = ?";
+
+    private static final String SELECT_PEOPLE_STMT = "SELECT * FROM PEOPLE ORDER BY name";
+
+    private static final String COLUMN_ID = "id";
+    private static final String COLUMN_NAME = "name";
+    private static final String COLUMN_OCCUPATION = "occupation";
+    private static final String COLUMN_AGE = "age";
+    private static final String COLUMN_EMPLOYMENT_STATUS = "employment_status";
+    private static final String COLUMN_TAX_ID = "tax_id";
+    private static final String COLUMN_US_CITIZEN = "us_citizen";
+    private static final String COLUMN_GENDER = "gender";
 
     private List<Person> people;
 
@@ -92,6 +107,7 @@ public class Database {
     public void save() throws SQLException {
         PreparedStatement countPersonsByIdStmt =  connection.prepareStatement(COUNT_PERSONS_BY_ID_SQL_STMT);
         PreparedStatement insertPersonStmt = connection.prepareStatement(INSERT_PERSON_SQL_STMT);
+        PreparedStatement updatePersonStmt = connection.prepareStatement(UPDATE_PEOPLE_SQL_STMT);
         for (Person person : people) {
             countPersonsByIdStmt.setInt(1, person.getId());
             ResultSet resultSet = countPersonsByIdStmt.executeQuery();
@@ -110,9 +126,40 @@ public class Database {
                 insertPersonStmt.executeUpdate();
             } else {
                 System.out.println("Updating person with ID " + person.getId());
+                updatePersonStmt.setString(1, person.getName());
+                updatePersonStmt.setString(2, person.getOccupation());
+                updatePersonStmt.setString(3, AgeCategory.ADULT.name());
+                updatePersonStmt.setString(4, EmploymentCategory.UNEMPLOYED.name());
+                updatePersonStmt.setString(5, person.getTaxId());
+                updatePersonStmt.setBoolean(6, person.isUsCitizen());
+                updatePersonStmt.setString(7, person.getGender().name());
+                updatePersonStmt.setInt(8, person.getId());
+                updatePersonStmt.executeUpdate();
             }
         }
         insertPersonStmt.close();
+        updatePersonStmt.close();
         countPersonsByIdStmt.close();
     }
+
+    public void load() throws SQLException {
+        people.clear();
+        Statement selectStatement = connection.createStatement();
+        ResultSet resultSet = selectStatement.executeQuery(SELECT_PEOPLE_STMT);
+        while (resultSet.next()) {
+            people.add(new Person(resultSet.getInt(COLUMN_ID),
+                    resultSet.getString(COLUMN_NAME),
+                    resultSet.getString(COLUMN_OCCUPATION),
+                    AgeCategory.valueOf(resultSet.getString(COLUMN_AGE).toUpperCase()),
+                    EmploymentCategory.valueOf(resultSet.getString(COLUMN_EMPLOYMENT_STATUS)),
+                    resultSet.getString(COLUMN_TAX_ID),
+                    resultSet.getBoolean(COLUMN_US_CITIZEN),
+                    Gender.valueOf(resultSet.getString(COLUMN_GENDER).toUpperCase())
+            ));
+        }
+        selectStatement.close();
+        System.out.println("Displaying list of people in database");
+        System.out.println(people);
+    }
+
 }
