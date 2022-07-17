@@ -38,6 +38,7 @@ public class Person implements Serializable {
         this.taxId = taxId;
         this.usCitizen = usCitizen;
         this.gender = gender;
+        count++;
     }
 
     public Person(String name, String occupation, AgeCategory ageCategory,

@@ -8,22 +8,15 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.prefs.Preferences;
 
+import static com.swing.commons.Constants.*;
 import static java.awt.event.ActionEvent.CTRL_MASK;
 
 public class MainFrame extends JFrame {
 
-    private static final String EXIT_CONFIRMATION_MESSAGE = "Do you really want to exit the application?";
-    private static final String EXIT_CONFIRMATION_TITLE = "Confirm Exit";
-    private static final String IMPORT_ERROR_MESSAGE = "Unable to load data from file";
-    private static final String IMPORT_ERROR_MESSAGE_TITLE = "Import error";
-    private static final String EXPORT_ERROR_MESSAGE = "Unable to save data to file";
-    private static final String EXPORT_ERROR_MESSAGE_TITLE = "Export error";
-    private static final String USER_PREFERENCE_KEY = "user";
-    private static final String PASSWORD_PREFERENCE_KEY = "password";
-    private static final String PORT_PREFERENCE_KEY = "port";
-    private static final int PORT_PREFERENCE_DEFAULT_VALUE = 3306;
+    private static final long serialVersionUID = 743282062175953522L;
 
     private TextPanel textPanel;
     private Toolbar toolbar;
@@ -74,10 +67,28 @@ public class MainFrame extends JFrame {
 
         setJMenuBar(createMenuBar());
 
-        toolbar.setTextListener(new TextListener() {
+        toolbar.setToolbarListener(new ToolbarListener() {
             @Override
-            public void textEmitted(String text) {
-                textPanel.appendText(text);
+            public void saveEventOccurred() {
+                connectToDatabase();
+                try {
+                    controller.saveToDatabase();
+                } catch (SQLException e) {
+                    JOptionPane.showMessageDialog(MainFrame.this, SAVE_TO_DATABASE_ERROR_MSG,
+                            SAVE_TO_DATABASE_ERROR_TITLE, JOptionPane.ERROR_MESSAGE);
+                }
+            }
+
+            @Override
+            public void refreshEventOccurred() {
+                connectToDatabase();
+                try {
+                    controller.loadDataFromDatabase();
+                    tablePanel.refresh();
+                } catch (SQLException e) {
+                    JOptionPane.showMessageDialog(MainFrame.this, LOAD_DATA_ERROR_MSG,
+                            LOAD_DATA_ERROR_TITLE, JOptionPane.ERROR_MESSAGE);
+                }
             }
         });
 
@@ -188,6 +199,16 @@ public class MainFrame extends JFrame {
         });
 
         return menuBar;
+    }
+
+    private void connectToDatabase() {
+        try {
+            controller.connectToDatabase();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(MainFrame.this,
+                    OPEN_DATABASE_CONNECTION_ERROR_MSG, OPEN_DATABASE_CONNECTION_ERROR_TITLE,
+                    JOptionPane.ERROR_MESSAGE);
+        }
     }
 
 }

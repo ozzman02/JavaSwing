@@ -7,35 +7,9 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
+import static com.swing.commons.Constants.*;
+
 public class Database {
-
-    private static final String MYSQL_CLASS_NAME = "com.mysql.cj.jdbc.Driver";
-    private static final String DRIVER_NOT_FOUND_ERROR_MSG = "Driver not found";
-    private static final String CONNECTION_URL = "jdbc:mysql://localhost:3306/swingtest";
-    private static final String DATABASE_USER = "root";
-    private static final String DATABASE_PASSWORD = "admin";
-    private static final String CLOSE_CONNECTION_ERROR_MSG = "Can't close connection to db";
-    private static final String CONNECTION_SUCCESS = "Successfully connected to database";
-    private static final String DISCONNECTION_SUCCESS = "Successfully disconnected from database";
-    private static final String COUNT_PERSONS_BY_ID_SQL_STMT = "SELECT COUNT(*) AS COUNT FROM PEOPLE WHERE ID = ?";
-
-    private static final String INSERT_PERSON_SQL_STMT =
-            "INSERT INTO PEOPLE (id, name, occupation, age, employment_status, tax_id, us_citizen, gender) " +
-                    "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
-
-    private static final String UPDATE_PEOPLE_SQL_STMT =
-            "UPDATE PEOPLE SET name = ?, occupation = ?, age = ?, employment_status = ?, tax_id = ?, us_citizen = ?, gender = ? WHERE id = ?";
-
-    private static final String SELECT_PEOPLE_STMT = "SELECT * FROM PEOPLE ORDER BY name";
-
-    private static final String COLUMN_ID = "id";
-    private static final String COLUMN_NAME = "name";
-    private static final String COLUMN_OCCUPATION = "occupation";
-    private static final String COLUMN_AGE = "age";
-    private static final String COLUMN_EMPLOYMENT_STATUS = "employment_status";
-    private static final String COLUMN_TAX_ID = "tax_id";
-    private static final String COLUMN_US_CITIZEN = "us_citizen";
-    private static final String COLUMN_GENDER = "gender";
 
     private List<Person> people;
 

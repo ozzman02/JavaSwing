@@ -5,6 +5,7 @@ import com.swing.model.*;
 
 import java.io.File;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.util.List;
 
 public class Controller {
@@ -12,7 +13,6 @@ public class Controller {
     private final Database database = new Database();
 
     public void addPerson(FormEvent formEvent) {
-
         Person person = new Person(
                 formEvent.getName(),
                 formEvent.getOccupation(),
@@ -40,4 +40,20 @@ public class Controller {
     public void removePerson(int index) {
         database.removePerson(index);
     }
+
+    public void saveToDatabase() throws SQLException {
+        database.save();
+    }
+    public void disconnectFromDatabase() throws Exception {
+        database.disconnect();
+    }
+
+    public void connectToDatabase() throws Exception {
+        database.connect();
+    }
+
+    public void loadDataFromDatabase() throws SQLException {
+        database.load();
+    }
+
 }
