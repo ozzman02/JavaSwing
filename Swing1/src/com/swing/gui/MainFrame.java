@@ -4,11 +4,10 @@ import com.swing.controller.Controller;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.KeyEvent;
+import java.awt.event.*;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.Arrays;
 import java.util.prefs.Preferences;
 
 import static com.swing.commons.Constants.*;
@@ -100,14 +99,25 @@ public class MainFrame extends JFrame {
             }
         });
 
+        addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                try {
+                    controller.disconnectFromDatabase();
+                    dispose();
+                } catch (Exception ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+        });
+
         add(formPanel, BorderLayout.WEST);
         add(toolbar, BorderLayout.NORTH);
         add(tablePanel, BorderLayout.CENTER);
 
-
         setSize(600, 500);
         setMinimumSize(new Dimension(500, 400));
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
         setVisible(true);
     }
 
@@ -193,7 +203,10 @@ public class MainFrame extends JFrame {
                 int action = JOptionPane.showConfirmDialog(MainFrame.this, EXIT_CONFIRMATION_MESSAGE,
                         EXIT_CONFIRMATION_TITLE , JOptionPane.OK_CANCEL_OPTION);
                 if (action == JOptionPane.OK_OPTION) {
-                    System.exit(0);
+                    WindowListener[] windowListeners = getWindowListeners();
+                    Arrays.stream(windowListeners).forEach(windowListener -> {
+                        windowListener.windowClosing(new WindowEvent(MainFrame.this, 0));
+                    });
                 }
             }
         });

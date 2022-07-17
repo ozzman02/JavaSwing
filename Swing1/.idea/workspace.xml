@@ -1,16 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e04f7cf-c0b6-4739-97c4-6cec31cdae4f" name="Changes" comment="loading data from database">
-      <change afterPath="$PROJECT_DIR$/src/com/swing/commons/Constants.java" afterDir="false" />
+    <list default="true" id="9e04f7cf-c0b6-4739-97c4-6cec31cdae4f" name="Changes" comment="wiring in the database code">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/per files/test.per" beforeDir="false" afterPath="$PROJECT_DIR$/per files/test.per" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/swing/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/swing/controller/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/swing/gui/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/swing/gui/MainFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/swing/gui/TextListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/swing/gui/ToolbarListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/swing/gui/Toolbar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/swing/gui/Toolbar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/swing/model/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/swing/model/Database.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/swing/model/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/swing/model/Person.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -368,7 +361,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658014078248</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="wiring in the database code">
+      <created>1658033544572</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1658033544573</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -384,7 +384,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="combo boxes" />
     <MESSAGE value="check boxes" />
     <MESSAGE value="radio buttons" />
     <MESSAGE value="menus" />
@@ -409,7 +408,8 @@
     <MESSAGE value="retrieving values from databases" />
     <MESSAGE value="saving to a database" />
     <MESSAGE value="loading data from database" />
-    <option name="LAST_COMMIT_MESSAGE" value="loading data from database" />
+    <MESSAGE value="wiring in the database code" />
+    <option name="LAST_COMMIT_MESSAGE" value="wiring in the database code" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
