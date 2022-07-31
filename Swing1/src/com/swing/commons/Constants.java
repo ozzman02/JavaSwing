@@ -2,6 +2,7 @@ package com.swing.commons;
 
 public class Constants {
 
+    public static final String MAINFRAME_WINDOW_TITLE = "Hello World";
     public static final String EXIT_CONFIRMATION_MESSAGE = "Do you really want to exit the application?";
     public static final String EXIT_CONFIRMATION_TITLE = "Confirm Exit";
     public static final String IMPORT_ERROR_MESSAGE = "Unable to load data from file";
@@ -43,7 +44,7 @@ public class Constants {
     public static final String UPDATE_PEOPLE_SQL_STMT =
             "UPDATE PEOPLE SET name = ?, occupation = ?, age = ?, employment_status = ?, tax_id = ?, us_citizen = ?, gender = ? WHERE id = ?";
 
-    public static final String SELECT_PEOPLE_STMT = "SELECT * FROM PEOPLE ORDER BY name";
+    public static final String SELECT_PEOPLE_STMT = "SELECT * FROM PEOPLE ORDER BY id";
 
     public static final String COLUMN_ID = "id";
     public static final String COLUMN_NAME = "name";
