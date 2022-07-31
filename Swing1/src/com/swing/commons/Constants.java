@@ -19,14 +19,19 @@ public class Constants {
     public static final String TOOLBAR_SAVE_BTN_TOOLTIP_TEXT = "Save";
     public static final String TOOLBAR_REFRESH_BTN_TOOLTIP_TEXT = "Refresh";
 
-    public static final String TOP_TREE_NODE = "Servers";
-    public static final String USA_BRANCH_TREE_NODE = "USA";
-    public static final String UK_BRANCH_TREE_NODE = "UK";
-    public static final String NEW_YORK_SERVER_TREE_LEAF = "New York";
-    public static final String BOSTON_SERVER_TREE_LEAF = "Boston";
-    public static final String LOS_ANGELES_SERVER_TREE_LEAF = "Los Angeles";
-    public static final String LONDON_SERVER_TREE_LEAF = " London";
-    public static final String EDINBURGH_SERVER_TREE_LEAF = " Edinburgh";
+    public static final String TOP_TREE_NODE_NAME = "Servers";
+    public static final String USA_BRANCH_TREE_NODE_NAME = "USA";
+    public static final String UK_BRANCH_TREE_NODE_NAME = "UK";
+    public static final String NEW_YORK_SERVER_TREE_LEAF_NAME = "New York";
+    public static final int NEW_YORK_SERVER_TREE_LEAF_ID = 0;
+    public static final String BOSTON_SERVER_TREE_LEAF_NAME = "Boston";
+    public static final int BOSTON_SERVER_TREE_LEAF_ID = 1;
+    public static final String LOS_ANGELES_SERVER_TREE_LEAF_NAME = "Los Angeles";
+    public static final int LOS_ANGELES_SERVER_TREE_LEAF_ID = 2;
+    public static final String LONDON_SERVER_TREE_LEAF_NAME = "London";
+    public static final int LONDON_SERVER_TREE_LEAF_ID = 3;
+    public static final String EDINBURGH_SERVER_TREE_LEAF_NAME = "Edinburgh";
+    public static final int EDINBURGH_SERVER_TREE_LEAF_ID = 4;
 
     public static final String MYSQL_CLASS_NAME = "com.mysql.cj.jdbc.Driver";
     public static final String DRIVER_NOT_FOUND_ERROR_MSG = "Driver not found";
