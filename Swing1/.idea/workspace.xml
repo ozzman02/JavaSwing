@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e04f7cf-c0b6-4739-97c4-6cec31cdae4f" name="Changes" comment="intercepting the window closing event">
-      <change afterPath="$PROJECT_DIR$/src/com/swing/images/Refresh16.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/swing/images/Save16.gif" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Swing1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Swing1.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/swing/commons/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/swing/commons/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/swing/gui/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/swing/gui/MainFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/swing/gui/Toolbar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/swing/gui/Toolbar.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -48,8 +49,8 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/Dell/projects/JavaSwing/Swing1/src/com/swing/images",
-    "project.structure.last.edited": "Modules",
+    "last_opened_file_path": "/Users/ovenegas/git/JavaSwing/Swing1",
+    "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "editor.preferences.appearance"

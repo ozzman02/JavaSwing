@@ -6,25 +6,35 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.net.URL;
 
-public class Toolbar extends JPanel implements ActionListener {
+import static com.swing.commons.Constants.*;
 
-    private static final String SAVE_BUTTON_PATH = "/Save16.gif";
-    private static final String REFRESH_BUTTON_PATH = "/Refresh16.gif";
+public class Toolbar extends JToolBar implements ActionListener {
 
     private final JButton saveBtn;
     private final JButton refreshBtn;
     private ToolbarListener toolbarListener;
 
     public Toolbar() {
+        // Get rid of the border if you want the draggable toolbar
         setBorder(BorderFactory.createEtchedBorder());
-        saveBtn = new JButton("Save");
+
+        //setFloatable(false);
+
+        saveBtn = new JButton();
         saveBtn.setIcon(createIcon(SAVE_BUTTON_PATH));
-        refreshBtn = new JButton("Refresh");
+        saveBtn.setToolTipText(TOOLBAR_SAVE_BTN_TOOLTIP_TEXT);
+
+        refreshBtn = new JButton();
         refreshBtn.setIcon(createIcon(REFRESH_BUTTON_PATH));
+        refreshBtn.setToolTipText(TOOLBAR_REFRESH_BTN_TOOLTIP_TEXT);
+
         saveBtn.addActionListener(this);
         refreshBtn.addActionListener(this);
+
         setLayout(new FlowLayout(FlowLayout.LEFT));
+
         add(saveBtn);
+        //addSeparator();
         add(refreshBtn);
     }
 
@@ -49,7 +59,7 @@ public class Toolbar extends JPanel implements ActionListener {
     private ImageIcon createIcon(String path) {
         URL url = getClass().getResource(path);
         if (url == null) {
-            System.err.println("Unable to load image: " + path);
+            System.err.println(CREATE_TOOLBAR_ICON_ERROR_MSG + path);
         }
         return new ImageIcon(url);
     }

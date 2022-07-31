@@ -12,6 +12,11 @@ public class Constants {
     public static final String PASSWORD_PREFERENCE_KEY = "password";
     public static final String PORT_PREFERENCE_KEY = "port";
     public static final int PORT_PREFERENCE_DEFAULT_VALUE = 3306;
+    public static final String SAVE_BUTTON_PATH = "/Save16.gif";
+    public static final String REFRESH_BUTTON_PATH = "/Refresh16.gif";
+    public static final String CREATE_TOOLBAR_ICON_ERROR_MSG = "Unable to load image: ";
+    public static final String TOOLBAR_SAVE_BTN_TOOLTIP_TEXT = "Save";
+    public static final String TOOLBAR_REFRESH_BTN_TOOLTIP_TEXT = "Refresh";
 
     public static final String MYSQL_CLASS_NAME = "com.mysql.cj.jdbc.Driver";
     public static final String DRIVER_NOT_FOUND_ERROR_MSG = "Driver not found";

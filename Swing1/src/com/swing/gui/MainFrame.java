@@ -112,7 +112,7 @@ public class MainFrame extends JFrame {
         });
 
         add(formPanel, BorderLayout.WEST);
-        add(toolbar, BorderLayout.NORTH);
+        add(toolbar, BorderLayout.PAGE_START);
         add(tablePanel, BorderLayout.CENTER);
 
         setSize(600, 500);
