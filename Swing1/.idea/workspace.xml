@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e04f7cf-c0b6-4739-97c4-6cec31cdae4f" name="Changes" comment="tabs: using tabbed panes">
-      <change afterPath="$PROJECT_DIR$/src/com/swing/gui/MessagePanel.java" afterDir="false" />
+    <list default="true" id="9e04f7cf-c0b6-4739-97c4-6cec31cdae4f" name="Changes" comment="tree views using JTree">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/swing/gui/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/swing/gui/MainFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/swing/commons/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/swing/commons/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/swing/gui/MessagePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/swing/gui/MessagePanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -401,7 +401,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659247809222</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="tree views using JTree">
+      <created>1659295840573</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1659295840573</updated>
+    </task>
+    <option name="localTasksCounter" value="45" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -417,7 +424,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="mnemonics and accelerators" />
     <MESSAGE value="message boxes" />
     <MESSAGE value="open and save file dialogs" />
     <MESSAGE value="filtering file choosers" />
@@ -442,7 +448,8 @@
     <MESSAGE value="draggable toolbars: using the JToolbar class" />
     <MESSAGE value="split panes: creating resizeable separate areas" />
     <MESSAGE value="tabs: using tabbed panes" />
-    <option name="LAST_COMMIT_MESSAGE" value="tabs: using tabbed panes" />
+    <MESSAGE value="tree views using JTree" />
+    <option name="LAST_COMMIT_MESSAGE" value="tree views using JTree" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
