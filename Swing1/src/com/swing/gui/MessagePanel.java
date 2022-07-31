@@ -4,6 +4,7 @@ import javax.swing.*;
 import javax.swing.event.TreeSelectionEvent;
 import javax.swing.event.TreeSelectionListener;
 import javax.swing.tree.DefaultMutableTreeNode;
+import javax.swing.tree.DefaultTreeCellRenderer;
 import javax.swing.tree.TreeSelectionModel;
 import java.awt.*;
 
@@ -43,9 +44,15 @@ class ServerInfo {
 public class MessagePanel extends JPanel {
 
     private JTree serverTree;
+    private DefaultTreeCellRenderer treeCellRenderer;
 
     public MessagePanel() {
+        treeCellRenderer = new DefaultTreeCellRenderer();
+        treeCellRenderer.setLeafIcon(Utils.createIcon(TREE_LEAF_ICON_BUTTON_PATH));
+        treeCellRenderer.setOpenIcon(Utils.createIcon(TREE_OPEN_ICON_BUTTON_PATH));
+        treeCellRenderer.setClosedIcon(Utils.createIcon(TREE_CLOSED_ICON_BUTTON_PATH));
         serverTree = new JTree(createTree());
+        serverTree.setCellRenderer(treeCellRenderer);
         serverTree.getSelectionModel().setSelectionMode(TreeSelectionModel.SINGLE_TREE_SELECTION);
         serverTree.addTreeSelectionListener(new TreeSelectionListener() {
             @Override

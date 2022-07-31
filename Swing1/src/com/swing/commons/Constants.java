@@ -13,9 +13,12 @@ public class Constants {
     public static final String PASSWORD_PREFERENCE_KEY = "password";
     public static final String PORT_PREFERENCE_KEY = "port";
     public static final int PORT_PREFERENCE_DEFAULT_VALUE = 3306;
-    public static final String SAVE_BUTTON_PATH = "/Save16.gif";
-    public static final String REFRESH_BUTTON_PATH = "/Refresh16.gif";
-    public static final String CREATE_TOOLBAR_ICON_ERROR_MSG = "Unable to load image: ";
+    public static final String SAVE_ICON_BUTTON_PATH = "/Save16.gif";
+    public static final String REFRESH_ICON_BUTTON_PATH = "/Refresh16.gif";
+    public static final String TREE_LEAF_ICON_BUTTON_PATH = "/Server16.gif";
+    public static final String TREE_OPEN_ICON_BUTTON_PATH = "/WebComponent16.gif";
+    public static final String TREE_CLOSED_ICON_BUTTON_PATH = "/WebComponentAdd16.gif";
+    public static final String CREATE_ICON_ERROR_MSG = "Unable to load image: ";
     public static final String TOOLBAR_SAVE_BTN_TOOLTIP_TEXT = "Save";
     public static final String TOOLBAR_REFRESH_BTN_TOOLTIP_TEXT = "Refresh";
 

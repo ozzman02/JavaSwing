@@ -4,9 +4,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.net.URL;
 
 import static com.swing.commons.Constants.*;
+import static com.swing.gui.Utils.createIcon;
 
 public class Toolbar extends JToolBar implements ActionListener {
 
@@ -21,11 +21,11 @@ public class Toolbar extends JToolBar implements ActionListener {
         //setFloatable(false);
 
         saveBtn = new JButton();
-        saveBtn.setIcon(createIcon(SAVE_BUTTON_PATH));
+        saveBtn.setIcon(createIcon(SAVE_ICON_BUTTON_PATH));
         saveBtn.setToolTipText(TOOLBAR_SAVE_BTN_TOOLTIP_TEXT);
 
         refreshBtn = new JButton();
-        refreshBtn.setIcon(createIcon(REFRESH_BUTTON_PATH));
+        refreshBtn.setIcon(createIcon(REFRESH_ICON_BUTTON_PATH));
         refreshBtn.setToolTipText(TOOLBAR_REFRESH_BTN_TOOLTIP_TEXT);
 
         saveBtn.addActionListener(this);
@@ -54,14 +54,6 @@ public class Toolbar extends JToolBar implements ActionListener {
                 toolbarListener.refreshEventOccurred();
             }
         }
-    }
-
-    private ImageIcon createIcon(String path) {
-        URL url = getClass().getResource(path);
-        if (url == null) {
-            System.err.println(CREATE_TOOLBAR_ICON_ERROR_MSG + path);
-        }
-        return new ImageIcon(url);
     }
 
 }
