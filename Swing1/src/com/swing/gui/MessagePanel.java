@@ -4,7 +4,6 @@ import javax.swing.*;
 import javax.swing.event.TreeSelectionEvent;
 import javax.swing.event.TreeSelectionListener;
 import javax.swing.tree.DefaultMutableTreeNode;
-import javax.swing.tree.DefaultTreeCellRenderer;
 import javax.swing.tree.TreeSelectionModel;
 import java.awt.*;
 
@@ -13,10 +12,12 @@ import static com.swing.commons.Constants.*;
 class ServerInfo {
     private String name;
     private int id;
+    private boolean checked;
 
-    public ServerInfo(String name, int id) {
+    public ServerInfo(String name, int id, boolean checked) {
         this.name = name;
         this.id = id;
+        this.checked = checked;
     }
 
     public String getName() {
@@ -35,6 +36,14 @@ class ServerInfo {
         this.id = id;
     }
 
+    public boolean isChecked() {
+        return checked;
+    }
+
+    public void setChecked(boolean checked) {
+        this.checked = checked;
+    }
+
     @Override
     public String toString() {
         return this.getName();
@@ -44,13 +53,11 @@ class ServerInfo {
 public class MessagePanel extends JPanel {
 
     private JTree serverTree;
-    private DefaultTreeCellRenderer treeCellRenderer;
+    private ServerTreeCellRenderer treeCellRenderer;
 
     public MessagePanel() {
-        treeCellRenderer = new DefaultTreeCellRenderer();
-        treeCellRenderer.setLeafIcon(Utils.createIcon(TREE_LEAF_ICON_BUTTON_PATH));
-        treeCellRenderer.setOpenIcon(Utils.createIcon(TREE_OPEN_ICON_BUTTON_PATH));
-        treeCellRenderer.setClosedIcon(Utils.createIcon(TREE_CLOSED_ICON_BUTTON_PATH));
+        treeCellRenderer = new ServerTreeCellRenderer();
+
         serverTree = new JTree(createTree());
         serverTree.setCellRenderer(treeCellRenderer);
         serverTree.getSelectionModel().setSelectionMode(TreeSelectionModel.SINGLE_TREE_SELECTION);
@@ -75,13 +82,13 @@ public class MessagePanel extends JPanel {
         DefaultMutableTreeNode branch1 = new DefaultMutableTreeNode(USA_BRANCH_TREE_NODE_NAME);
 
         DefaultMutableTreeNode server1 = new DefaultMutableTreeNode(
-                new ServerInfo(NEW_YORK_SERVER_TREE_LEAF_NAME, NEW_YORK_SERVER_TREE_LEAF_ID));
+                new ServerInfo(NEW_YORK_SERVER_TREE_LEAF_NAME, NEW_YORK_SERVER_TREE_LEAF_ID, true));
 
         DefaultMutableTreeNode server2 = new DefaultMutableTreeNode(
-                new ServerInfo(BOSTON_SERVER_TREE_LEAF_NAME, BOSTON_SERVER_TREE_LEAF_ID));
+                new ServerInfo(BOSTON_SERVER_TREE_LEAF_NAME, BOSTON_SERVER_TREE_LEAF_ID, false));
 
         DefaultMutableTreeNode server3 = new DefaultMutableTreeNode(
-                new ServerInfo(LOS_ANGELES_SERVER_TREE_LEAF_NAME, LOS_ANGELES_SERVER_TREE_LEAF_ID));
+                new ServerInfo(LOS_ANGELES_SERVER_TREE_LEAF_NAME, LOS_ANGELES_SERVER_TREE_LEAF_ID, true));
 
         branch1.add(server1);
         branch1.add(server2);
@@ -90,10 +97,10 @@ public class MessagePanel extends JPanel {
         DefaultMutableTreeNode branch2 = new DefaultMutableTreeNode(UK_BRANCH_TREE_NODE_NAME);
 
         DefaultMutableTreeNode server4 = new DefaultMutableTreeNode(
-                new ServerInfo(LONDON_SERVER_TREE_LEAF_NAME, LONDON_SERVER_TREE_LEAF_ID));
+                new ServerInfo(LONDON_SERVER_TREE_LEAF_NAME, LONDON_SERVER_TREE_LEAF_ID, false));
 
         DefaultMutableTreeNode server5 = new DefaultMutableTreeNode(
-                new ServerInfo(EDINBURGH_SERVER_TREE_LEAF_NAME, EDINBURGH_SERVER_TREE_LEAF_ID));
+                new ServerInfo(EDINBURGH_SERVER_TREE_LEAF_NAME, EDINBURGH_SERVER_TREE_LEAF_ID, true));
 
         branch2.add(server4);
         branch2.add(server5);

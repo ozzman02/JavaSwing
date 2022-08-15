@@ -1,15 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e04f7cf-c0b6-4739-97c4-6cec31cdae4f" name="Changes" comment="associating data with tree nodes">
-      <change afterPath="$PROJECT_DIR$/src/com/swing/images/Server16.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/swing/images/WebComponent16.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/swing/images/WebComponentAdd16.gif" afterDir="false" />
+    <list default="true" id="9e04f7cf-c0b6-4739-97c4-6cec31cdae4f" name="Changes" comment="tree node icons">
+      <change afterPath="$PROJECT_DIR$/src/com/swing/gui/ServerTreeCellRenderer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/swing/commons/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/swing/commons/Constants.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/swing/gui/MessagePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/swing/gui/MessagePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/swing/gui/Toolbar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/swing/gui/Toolbar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/swing/gui/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/swing/gui/Utils.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,11 +48,11 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "/Users/ovenegas/git/JavaSwing/Swing1/src/com/swing/images",
+    "last_opened_file_path": "/Users/ovenegas/git/JavaSwing/Swing1",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "editor.preferences.appearance"
+    "settings.editor.selected.configurable": "preferences.sourceCode.Java"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -428,7 +423,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659298274960</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="tree node icons">
+      <created>1659301008026</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1659301008026</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -444,7 +446,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="filtering file choosers" />
     <MESSAGE value="model-view-controller: creating a data model" />
     <MESSAGE value="model-view-controller: creating a controller" />
     <MESSAGE value="creating tables" />
@@ -469,7 +470,8 @@
     <MESSAGE value="tree views using JTree" />
     <MESSAGE value="tree selection events" />
     <MESSAGE value="associating data with tree nodes" />
-    <option name="LAST_COMMIT_MESSAGE" value="associating data with tree nodes" />
+    <MESSAGE value="tree node icons" />
+    <option name="LAST_COMMIT_MESSAGE" value="tree node icons" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
