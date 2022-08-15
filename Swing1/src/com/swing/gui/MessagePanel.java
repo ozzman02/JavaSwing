@@ -1,8 +1,8 @@
 package com.swing.gui;
 
 import javax.swing.*;
-import javax.swing.event.TreeSelectionEvent;
-import javax.swing.event.TreeSelectionListener;
+import javax.swing.event.CellEditorListener;
+import javax.swing.event.ChangeEvent;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.TreeSelectionModel;
 import java.awt.*;
@@ -64,14 +64,15 @@ public class MessagePanel extends JPanel {
         serverTree.setCellEditor(treeCellEditor);
         serverTree.setEditable(true);
         serverTree.getSelectionModel().setSelectionMode(TreeSelectionModel.SINGLE_TREE_SELECTION);
-        serverTree.addTreeSelectionListener(new TreeSelectionListener() {
+        treeCellEditor.addCellEditorListener(new CellEditorListener() {
             @Override
-            public void valueChanged(TreeSelectionEvent e) {
-                DefaultMutableTreeNode node = (DefaultMutableTreeNode) serverTree.getLastSelectedPathComponent();
-                Object userObject = node.getUserObject();
-                if (userObject instanceof ServerInfo) {
-                    int id = ((ServerInfo) userObject).getId();
-                }
+            public void editingStopped(ChangeEvent e) {
+                ServerInfo serverInfo = (ServerInfo) treeCellEditor.getCellEditorValue();
+            }
+
+            @Override
+            public void editingCanceled(ChangeEvent e) {
+
             }
         });
         setLayout(new BorderLayout());
