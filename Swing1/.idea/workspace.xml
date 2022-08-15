@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e04f7cf-c0b6-4739-97c4-6cec31cdae4f" name="Changes" comment="tree node icons">
-      <change afterPath="$PROJECT_DIR$/src/com/swing/gui/ServerTreeCellRenderer.java" afterDir="false" />
+    <list default="true" id="9e04f7cf-c0b6-4739-97c4-6cec31cdae4f" name="Changes" comment="custom Tree Cell Renderers: Using Checkboxes in Trees">
+      <change afterPath="$PROJECT_DIR$/src/com/swing/gui/ServerTreeCellEditor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/swing/gui/MessagePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/swing/gui/MessagePanel.java" afterDir="false" />
     </list>
@@ -430,7 +430,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659301008026</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="custom Tree Cell Renderers: Using Checkboxes in Trees">
+      <created>1660536974764</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1660536974764</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -446,7 +453,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="model-view-controller: creating a data model" />
     <MESSAGE value="model-view-controller: creating a controller" />
     <MESSAGE value="creating tables" />
     <MESSAGE value="serialization - saving objects to files" />
@@ -471,7 +477,8 @@
     <MESSAGE value="tree selection events" />
     <MESSAGE value="associating data with tree nodes" />
     <MESSAGE value="tree node icons" />
-    <option name="LAST_COMMIT_MESSAGE" value="tree node icons" />
+    <MESSAGE value="custom Tree Cell Renderers: Using Checkboxes in Trees" />
+    <option name="LAST_COMMIT_MESSAGE" value="custom Tree Cell Renderers: Using Checkboxes in Trees" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
