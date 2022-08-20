@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9e04f7cf-c0b6-4739-97c4-6cec31cdae4f" name="Changes" comment="detecting Tree Node Editor Changes">
+      <change afterPath="$PROJECT_DIR$/src/com/swing/controller/MessageServer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/swing/model/Message.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/swing/gui/MessagePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/swing/gui/MessagePanel.java" afterDir="false" />
     </list>
@@ -99,13 +101,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1657504845980</updated>
-    </task>
-    <task id="LOCAL-00002" summary="responding to button clicks">
-      <created>1657507504513</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1657507504513</updated>
     </task>
     <task id="LOCAL-00003" summary="custom components">
       <created>1657510156364</created>
@@ -443,7 +438,14 @@
       <option name="project" value="LOCAL" />
       <updated>1660540279753</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="detecting Tree Node Editor Changes">
+      <created>1661021326803</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1661021326803</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

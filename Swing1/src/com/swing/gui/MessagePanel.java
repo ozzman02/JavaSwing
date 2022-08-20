@@ -1,11 +1,19 @@
 package com.swing.gui;
 
+import com.swing.controller.MessageServer;
+import com.swing.model.Message;
+
 import javax.swing.*;
 import javax.swing.event.CellEditorListener;
 import javax.swing.event.ChangeEvent;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.TreeSelectionModel;
 import java.awt.*;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
+import java.util.concurrent.ExecutionException;
 
 import static com.swing.commons.Constants.*;
 
@@ -55,19 +63,40 @@ public class MessagePanel extends JPanel {
     private JTree serverTree;
     private ServerTreeCellRenderer treeCellRenderer;
     private ServerTreeCellEditor treeCellEditor;
+    private Set<Integer> selectedServers;
+    private MessageServer messageServer;
 
     public MessagePanel() {
+
+        messageServer = new MessageServer();
+
+        selectedServers = new TreeSet<>();
+        selectedServers.add(0);
+        selectedServers.add(1);
+        selectedServers.add(4);
+
         treeCellRenderer = new ServerTreeCellRenderer();
         treeCellEditor = new ServerTreeCellEditor();
+
         serverTree = new JTree(createTree());
         serverTree.setCellRenderer(treeCellRenderer);
         serverTree.setCellEditor(treeCellEditor);
         serverTree.setEditable(true);
         serverTree.getSelectionModel().setSelectionMode(TreeSelectionModel.SINGLE_TREE_SELECTION);
+
         treeCellEditor.addCellEditorListener(new CellEditorListener() {
             @Override
             public void editingStopped(ChangeEvent e) {
                 ServerInfo serverInfo = (ServerInfo) treeCellEditor.getCellEditorValue();
+                //System.out.println(serverInfo + ": " + serverInfo.getId() + "; " + serverInfo.isChecked());
+                int serverId = serverInfo.getId();
+                if (serverInfo.isChecked()) {
+                    selectedServers.add(serverId);
+                } else {
+                    selectedServers.remove(serverId);
+                }
+                messageServer.setSelectedServers(selectedServers);
+                retrieveMessages();
             }
 
             @Override
@@ -79,6 +108,39 @@ public class MessagePanel extends JPanel {
         add(new JScrollPane(serverTree), BorderLayout.CENTER);
     }
 
+    private void retrieveMessages() {
+        System.out.println("Messages waiting: " + messageServer.getMessageCount());
+        SwingWorker<List<Message>, Integer> worker = new SwingWorker<List<Message>, Integer>() {
+            @Override
+            protected List<Message> doInBackground() throws Exception {
+                List<Message> retrievedMessages = new ArrayList<>();
+                int count = 0;
+                for (Message message : messageServer) {
+                    System.out.println(message.getTitle());
+                    retrievedMessages.add(message);
+                    count++;
+                    publish(count);
+                }
+                return retrievedMessages;
+            }
+            @Override
+            protected void process(List<Integer> counts) {
+                int retrieved = counts.get(counts.size() - 1);
+                System.out.println("Got " + retrieved + " messages");
+            }
+            @Override
+            protected void done() {
+                try {
+                    List<Message> retrievedMessages = get();
+                    System.out.println("Retrieved " + retrievedMessages.size() + " messages");
+                } catch (InterruptedException | ExecutionException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        };
+        worker.execute();
+    }
+
     private DefaultMutableTreeNode createTree() {
 
         DefaultMutableTreeNode top = new DefaultMutableTreeNode(TOP_TREE_NODE_NAME);
@@ -86,13 +148,25 @@ public class MessagePanel extends JPanel {
         DefaultMutableTreeNode branch1 = new DefaultMutableTreeNode(USA_BRANCH_TREE_NODE_NAME);
 
         DefaultMutableTreeNode server1 = new DefaultMutableTreeNode(
-                new ServerInfo(NEW_YORK_SERVER_TREE_LEAF_NAME, NEW_YORK_SERVER_TREE_LEAF_ID, true));
+                new ServerInfo(
+                        NEW_YORK_SERVER_TREE_LEAF_NAME,
+                        NEW_YORK_SERVER_TREE_LEAF_ID,
+                        selectedServers.contains(0)
+                ));
 
         DefaultMutableTreeNode server2 = new DefaultMutableTreeNode(
-                new ServerInfo(BOSTON_SERVER_TREE_LEAF_NAME, BOSTON_SERVER_TREE_LEAF_ID, false));
+                new ServerInfo(
+                        BOSTON_SERVER_TREE_LEAF_NAME,
+                        BOSTON_SERVER_TREE_LEAF_ID,
+                        selectedServers.contains(1)
+                ));
 
         DefaultMutableTreeNode server3 = new DefaultMutableTreeNode(
-                new ServerInfo(LOS_ANGELES_SERVER_TREE_LEAF_NAME, LOS_ANGELES_SERVER_TREE_LEAF_ID, true));
+                new ServerInfo(
+                        LOS_ANGELES_SERVER_TREE_LEAF_NAME,
+                        LOS_ANGELES_SERVER_TREE_LEAF_ID,
+                        selectedServers.contains(2)
+                ));
 
         branch1.add(server1);
         branch1.add(server2);
@@ -101,10 +175,18 @@ public class MessagePanel extends JPanel {
         DefaultMutableTreeNode branch2 = new DefaultMutableTreeNode(UK_BRANCH_TREE_NODE_NAME);
 
         DefaultMutableTreeNode server4 = new DefaultMutableTreeNode(
-                new ServerInfo(LONDON_SERVER_TREE_LEAF_NAME, LONDON_SERVER_TREE_LEAF_ID, false));
+                new ServerInfo(
+                        LONDON_SERVER_TREE_LEAF_NAME,
+                        LONDON_SERVER_TREE_LEAF_ID,
+                        selectedServers.contains(3)
+                ));
 
         DefaultMutableTreeNode server5 = new DefaultMutableTreeNode(
-                new ServerInfo(EDINBURGH_SERVER_TREE_LEAF_NAME, EDINBURGH_SERVER_TREE_LEAF_ID, true));
+                new ServerInfo(
+                        EDINBURGH_SERVER_TREE_LEAF_NAME,
+                        EDINBURGH_SERVER_TREE_LEAF_ID,
+                        selectedServers.contains(4)
+                ));
 
         branch2.add(server4);
         branch2.add(server5);
