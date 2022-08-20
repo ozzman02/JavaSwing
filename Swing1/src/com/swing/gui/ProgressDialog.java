@@ -12,6 +12,9 @@ public class ProgressDialog extends JDialog {
         super(parent, "Message Downloading...", ModalityType.APPLICATION_MODAL);
         cancelButton = new JButton("Cancel");
         progressBar = new JProgressBar();
+        progressBar.setStringPainted(true);
+        progressBar.setString("Retrieving messages ...");
+        progressBar.setMaximum(10);
         setLayout(new FlowLayout());
         Dimension size = cancelButton.getPreferredSize();
         size.width = 400;
@@ -27,7 +30,7 @@ public class ProgressDialog extends JDialog {
         SwingUtilities.invokeLater(new Runnable() {
             @Override
             public void run() {
-                if (visible == false) {
+                if (!visible) {
                     try {
                         Thread.sleep(1000);
                     } catch (InterruptedException e) {
@@ -46,6 +49,8 @@ public class ProgressDialog extends JDialog {
     }
 
     public void setValue(int value) {
+        int progress = 100*value/progressBar.getMaximum();
+        progressBar.setString(String.format("%d%% complete", progress));
         progressBar.setValue(value);
     }
 }
