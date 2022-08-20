@@ -65,9 +65,11 @@ public class MessagePanel extends JPanel {
     private ServerTreeCellEditor treeCellEditor;
     private Set<Integer> selectedServers;
     private MessageServer messageServer;
+    private ProgressDialog progressDialog;
 
     public MessagePanel() {
 
+        progressDialog = new ProgressDialog((Window) getParent());
         messageServer = new MessageServer();
 
         selectedServers = new TreeSet<>();
@@ -88,7 +90,7 @@ public class MessagePanel extends JPanel {
             @Override
             public void editingStopped(ChangeEvent e) {
                 ServerInfo serverInfo = (ServerInfo) treeCellEditor.getCellEditorValue();
-                //System.out.println(serverInfo + ": " + serverInfo.getId() + "; " + serverInfo.isChecked());
+                System.out.println(serverInfo + ": " + serverInfo.getId() + "; " + serverInfo.isChecked());
                 int serverId = serverInfo.getId();
                 if (serverInfo.isChecked()) {
                     selectedServers.add(serverId);
@@ -110,6 +112,14 @@ public class MessagePanel extends JPanel {
 
     private void retrieveMessages() {
         System.out.println("Messages waiting: " + messageServer.getMessageCount());
+
+        SwingUtilities.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                progressDialog.setVisible(true);
+            }
+        });
+
         SwingWorker<List<Message>, Integer> worker = new SwingWorker<List<Message>, Integer>() {
             @Override
             protected List<Message> doInBackground() throws Exception {
@@ -136,6 +146,7 @@ public class MessagePanel extends JPanel {
                 } catch (InterruptedException | ExecutionException e) {
                     throw new RuntimeException(e);
                 }
+                progressDialog.setVisible(false);
             }
         };
         worker.execute();
