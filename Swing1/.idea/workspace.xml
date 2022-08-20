@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e04f7cf-c0b6-4739-97c4-6cec31cdae4f" name="Changes" comment="multithreading in swing">
-      <change afterPath="$PROJECT_DIR$/src/com/swing/gui/ProgressDialog.java" afterDir="false" />
+    <list default="true" id="9e04f7cf-c0b6-4739-97c4-6cec31cdae4f" name="Changes" comment="modal dialogs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/swing/gui/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/swing/gui/MainFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/swing/gui/MessagePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/swing/gui/MessagePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/swing/gui/ProgressDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/swing/gui/ProgressDialog.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,13 +101,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1657504845980</updated>
-    </task>
-    <task id="LOCAL-00004" summary="simple toolbar">
-      <created>1657510963683</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1657510963683</updated>
     </task>
     <task id="LOCAL-00005" summary="communication between components">
       <created>1657512073815</created>
@@ -444,7 +438,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661028413683</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="modal dialogs">
+      <created>1661029174550</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1661029174551</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -460,7 +461,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="popup menus" />
     <MESSAGE value="selecting rows in table" />
     <MESSAGE value="deleting rows in table" />
     <MESSAGE value="dialogs" />
@@ -485,7 +485,8 @@
     <MESSAGE value="custom Tree Cell Editors: Editing Tree Nodes Using Checkboxes" />
     <MESSAGE value="detecting Tree Node Editor Changes" />
     <MESSAGE value="multithreading in swing" />
-    <option name="LAST_COMMIT_MESSAGE" value="multithreading in swing" />
+    <MESSAGE value="modal dialogs" />
+    <option name="LAST_COMMIT_MESSAGE" value="modal dialogs" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">

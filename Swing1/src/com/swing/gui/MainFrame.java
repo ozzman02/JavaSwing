@@ -39,7 +39,7 @@ public class MainFrame extends JFrame {
         controller = new Controller();
         tablePanel = new TablePanel();
         prefsDialog = new PrefsDialog(this);
-        messagePanel = new MessagePanel();
+        messagePanel = new MessagePanel(this);
 
         tabbedPane = new JTabbedPane();
         tabbedPane.addTab("Person Database", tablePanel);

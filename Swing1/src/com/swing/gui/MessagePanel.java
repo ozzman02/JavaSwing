@@ -67,9 +67,9 @@ public class MessagePanel extends JPanel {
     private MessageServer messageServer;
     private ProgressDialog progressDialog;
 
-    public MessagePanel() {
+    public MessagePanel(JFrame panel) {
 
-        progressDialog = new ProgressDialog((Window) getParent());
+        progressDialog = new ProgressDialog(panel);
         messageServer = new MessageServer();
 
         selectedServers = new TreeSet<>();
@@ -111,15 +111,8 @@ public class MessagePanel extends JPanel {
     }
 
     private void retrieveMessages() {
-        System.out.println("Messages waiting: " + messageServer.getMessageCount());
-
-        SwingUtilities.invokeLater(new Runnable() {
-            @Override
-            public void run() {
-                progressDialog.setVisible(true);
-            }
-        });
-
+        progressDialog.setMaximum(messageServer.getMessageCount());
+        progressDialog.setVisible(true);
         SwingWorker<List<Message>, Integer> worker = new SwingWorker<List<Message>, Integer>() {
             @Override
             protected List<Message> doInBackground() throws Exception {
@@ -136,13 +129,12 @@ public class MessagePanel extends JPanel {
             @Override
             protected void process(List<Integer> counts) {
                 int retrieved = counts.get(counts.size() - 1);
-                System.out.println("Got " + retrieved + " messages");
+                progressDialog.setValue(retrieved);
             }
             @Override
             protected void done() {
                 try {
                     List<Message> retrievedMessages = get();
-                    System.out.println("Retrieved " + retrievedMessages.size() + " messages");
                 } catch (InterruptedException | ExecutionException e) {
                     throw new RuntimeException(e);
                 }
