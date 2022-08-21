@@ -58,7 +58,7 @@ class ServerInfo {
     }
 
 }
-public class MessagePanel extends JPanel {
+public class MessagePanel extends JPanel implements ProgressDialogListener {
 
     private JTree serverTree;
     private ServerTreeCellRenderer treeCellRenderer;
@@ -66,11 +66,14 @@ public class MessagePanel extends JPanel {
     private Set<Integer> selectedServers;
     private MessageServer messageServer;
     private ProgressDialog progressDialog;
+    private SwingWorker<List<Message>, Integer> worker;
 
     public MessagePanel(JFrame panel) {
 
-        progressDialog = new ProgressDialog(panel);
+        progressDialog = new ProgressDialog(panel, "Message Downloading...");
         messageServer = new MessageServer();
+
+        progressDialog.setProgressDialogListener(this);
 
         selectedServers = new TreeSet<>();
         selectedServers.add(0);
@@ -113,12 +116,15 @@ public class MessagePanel extends JPanel {
     private void retrieveMessages() {
         progressDialog.setMaximum(messageServer.getMessageCount());
         progressDialog.setVisible(true);
-        SwingWorker<List<Message>, Integer> worker = new SwingWorker<List<Message>, Integer>() {
+
+        worker = new SwingWorker<>() {
+
             @Override
             protected List<Message> doInBackground() throws Exception {
                 List<Message> retrievedMessages = new ArrayList<>();
                 int count = 0;
                 for (Message message : messageServer) {
+                    if (isCancelled()) break;
                     System.out.println(message.getTitle());
                     retrievedMessages.add(message);
                     count++;
@@ -126,19 +132,22 @@ public class MessagePanel extends JPanel {
                 }
                 return retrievedMessages;
             }
+
             @Override
             protected void process(List<Integer> counts) {
                 int retrieved = counts.get(counts.size() - 1);
                 progressDialog.setValue(retrieved);
             }
+
             @Override
             protected void done() {
+                progressDialog.setVisible(false);
+                if (isCancelled()) return;
                 try {
                     List<Message> retrievedMessages = get();
                 } catch (InterruptedException | ExecutionException e) {
                     throw new RuntimeException(e);
                 }
-                progressDialog.setVisible(false);
             }
         };
         worker.execute();
@@ -151,23 +160,17 @@ public class MessagePanel extends JPanel {
         DefaultMutableTreeNode branch1 = new DefaultMutableTreeNode(USA_BRANCH_TREE_NODE_NAME);
 
         DefaultMutableTreeNode server1 = new DefaultMutableTreeNode(
-                new ServerInfo(
-                        NEW_YORK_SERVER_TREE_LEAF_NAME,
-                        NEW_YORK_SERVER_TREE_LEAF_ID,
+                new ServerInfo(NEW_YORK_SERVER_TREE_LEAF_NAME, NEW_YORK_SERVER_TREE_LEAF_ID,
                         selectedServers.contains(0)
                 ));
 
         DefaultMutableTreeNode server2 = new DefaultMutableTreeNode(
-                new ServerInfo(
-                        BOSTON_SERVER_TREE_LEAF_NAME,
-                        BOSTON_SERVER_TREE_LEAF_ID,
+                new ServerInfo(BOSTON_SERVER_TREE_LEAF_NAME, BOSTON_SERVER_TREE_LEAF_ID,
                         selectedServers.contains(1)
                 ));
 
         DefaultMutableTreeNode server3 = new DefaultMutableTreeNode(
-                new ServerInfo(
-                        LOS_ANGELES_SERVER_TREE_LEAF_NAME,
-                        LOS_ANGELES_SERVER_TREE_LEAF_ID,
+                new ServerInfo(LOS_ANGELES_SERVER_TREE_LEAF_NAME, LOS_ANGELES_SERVER_TREE_LEAF_ID,
                         selectedServers.contains(2)
                 ));
 
@@ -178,16 +181,12 @@ public class MessagePanel extends JPanel {
         DefaultMutableTreeNode branch2 = new DefaultMutableTreeNode(UK_BRANCH_TREE_NODE_NAME);
 
         DefaultMutableTreeNode server4 = new DefaultMutableTreeNode(
-                new ServerInfo(
-                        LONDON_SERVER_TREE_LEAF_NAME,
-                        LONDON_SERVER_TREE_LEAF_ID,
+                new ServerInfo(LONDON_SERVER_TREE_LEAF_NAME, LONDON_SERVER_TREE_LEAF_ID,
                         selectedServers.contains(3)
                 ));
 
         DefaultMutableTreeNode server5 = new DefaultMutableTreeNode(
-                new ServerInfo(
-                        EDINBURGH_SERVER_TREE_LEAF_NAME,
-                        EDINBURGH_SERVER_TREE_LEAF_ID,
+                new ServerInfo(EDINBURGH_SERVER_TREE_LEAF_NAME, EDINBURGH_SERVER_TREE_LEAF_ID,
                         selectedServers.contains(4)
                 ));
 
@@ -200,4 +199,10 @@ public class MessagePanel extends JPanel {
         return top;
     }
 
+    @Override
+    public void progressDialogCancelled() {
+        if (worker != null) {
+            worker.cancel(true);
+        }
+    }
 }
