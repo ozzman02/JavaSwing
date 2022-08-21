@@ -3,6 +3,8 @@ package com.swing.gui;
 import com.swing.controller.Controller;
 
 import javax.swing.*;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import java.awt.*;
 import java.awt.event.*;
 import java.io.IOException;
@@ -42,6 +44,16 @@ public class MainFrame extends JFrame {
         tabbedPane = new JTabbedPane();
         tabbedPane.addTab("Person Database", tablePanel);
         tabbedPane.addTab("Messages", messagePanel);
+
+        tabbedPane.addChangeListener(new ChangeListener() {
+            @Override
+            public void stateChanged(ChangeEvent e) {
+                int selectedTabIndex = tabbedPane.getSelectedIndex();
+                if (selectedTabIndex == 1) {
+                    messagePanel.refresh();
+                }
+            }
+        });
 
         splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, formPanel, tabbedPane);
         splitPane.setOneTouchExpandable(true);

@@ -20,11 +20,21 @@ public class MessageServer implements Iterable<Message> {
         List<Message> list = new ArrayList<>();
         list.add(new Message("The cat is missing","Have you seen Felix anywhere?"));
         list.add(new Message("See you later?","Are we still meeting in the pub?"));
+        list.add(new Message("Recovery process","Continue with meetings"));
+        list.add(new Message("Talk to your godfather","Work the 12 Steps"));
+        list.add(new Message("Breakfast?","Gallo pinto con carne mechada en salsa !!!"));
+        list.add(new Message("Nike?","Thinking on Air Max !!"));
+        list.add(new Message("Kamikaze II?","Old model but I would like to have it !!"));
         messages.put(0, list);
 
         list = new ArrayList<>();
-        list.add(new Message("How about dinner later?","Are you doing anything later on?"));
-        list.add(new Message("See you later?","Are we still meeting in the pub?"));
+        list.add(new Message("Coding again?","Let's eat pizza !!"));
+        list.add(new Message("Thinking on getting better?","Good, keep going man!"));
+        list.add(new Message("Java certification","11 V or 17 V?"));
+        list.add(new Message("AWS devops?","Why not?"));
+        list.add(new Message("Learn Scala !!!","Yeah sure !!!"));
+        list.add(new Message("What about Kubernetes?","In progress ..."));
+        list.add(new Message("React or Angular?","It seems React ... but Angular too ..."));
         messages.put(1, list);
     }
 
