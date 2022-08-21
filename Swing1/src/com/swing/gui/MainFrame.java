@@ -17,7 +17,6 @@ public class MainFrame extends JFrame {
 
     private static final long serialVersionUID = 743282062175953522L;
 
-    private TextPanel textPanel;
     private Toolbar toolbar;
     private FormPanel formPanel;
     private JFileChooser fileChooser;
@@ -34,7 +33,6 @@ public class MainFrame extends JFrame {
         setLayout(new BorderLayout());
 
         toolbar = new Toolbar();
-        textPanel = new TextPanel();
         formPanel = new FormPanel();
         controller = new Controller();
         tablePanel = new TablePanel();

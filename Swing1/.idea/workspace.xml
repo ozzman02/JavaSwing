@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e04f7cf-c0b6-4739-97c4-6cec31cdae4f" name="Changes" comment="cancelling swing worker threads">
+    <list default="true" id="9e04f7cf-c0b6-4739-97c4-6cec31cdae4f" name="Changes" comment="setting the cursor">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/swing/gui/ProgressDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/swing/gui/ProgressDialog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/swing/gui/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/swing/gui/MainFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/swing/gui/MessagePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/swing/gui/MessagePanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,13 +100,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1657504845980</updated>
-    </task>
-    <task id="LOCAL-00008" summary="setting borders">
-      <created>1657569667032</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1657569667032</updated>
     </task>
     <task id="LOCAL-00009" summary="text fields and labels">
       <created>1657570131546</created>
@@ -443,7 +437,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661063266299</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="setting the cursor">
+      <created>1661063776421</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1661063776421</updated>
+    </task>
+    <option name="localTasksCounter" value="58" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -459,7 +460,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="spinners" />
     <MESSAGE value="password fields" />
     <MESSAGE value="saving program data with preferences" />
     <MESSAGE value="arranging and designing dialogs and forms" />
@@ -484,7 +484,8 @@
     <MESSAGE value="progress bars" />
     <MESSAGE value="adding text to progress bars" />
     <MESSAGE value="cancelling swing worker threads" />
-    <option name="LAST_COMMIT_MESSAGE" value="cancelling swing worker threads" />
+    <MESSAGE value="setting the cursor" />
+    <option name="LAST_COMMIT_MESSAGE" value="setting the cursor" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
