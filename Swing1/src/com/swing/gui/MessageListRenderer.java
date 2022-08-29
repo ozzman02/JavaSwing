@@ -24,6 +24,7 @@ public class MessageListRenderer implements ListCellRenderer {
     public MessageListRenderer() {
         panel = new JPanel();
         label = new JLabel();
+        label.setFont(Utils.createFont("/CrimewaveBB.ttf").deriveFont(Font.PLAIN, 20));
         selectedColor = new Color(210, 210, 255);
         normalColor = Color.WHITE;
         label.setIcon(Utils.createIcon(MESSAGE_LIST_RENDERER_LABEL_ICON));

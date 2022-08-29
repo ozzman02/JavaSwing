@@ -20,6 +20,7 @@ public class Constants {
     public static final String TREE_CLOSED_ICON_BUTTON_PATH = "/WebComponentAdd16.gif";
     public static final String MESSAGE_LIST_RENDERER_LABEL_ICON = "/Information24.gif";
     public static final String CREATE_ICON_ERROR_MSG = "Unable to load image: ";
+    public static final String CREATE_FONT_ERROR_MSG = "Unable to load font: ";
     public static final String TOOLBAR_SAVE_BTN_TOOLTIP_TEXT = "Save";
     public static final String TOOLBAR_REFRESH_BTN_TOOLTIP_TEXT = "Refresh";
 

@@ -133,7 +133,7 @@ public class MessagePanel extends JPanel implements ProgressDialogListener {
             @Override
             public void valueChanged(ListSelectionEvent e) {
                 Message message = messageList.getSelectedValue();
-                textPanel.setText(message.getContents());
+                if (message != null) textPanel.setText(message.getContents());
             }
         });
 
@@ -185,7 +185,7 @@ public class MessagePanel extends JPanel implements ProgressDialogListener {
                     for (Message message : retrievedMessages) {
                         messageListModel.addElement(message);
                     }
-                    messageList.setSelectedIndex(0);
+                    //messageList.setSelectedIndex(0);
                 } catch (InterruptedException | ExecutionException e) {
                     throw new RuntimeException(e);
                 }
