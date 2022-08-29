@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e04f7cf-c0b6-4739-97c4-6cec31cdae4f" name="Changes" comment="changing the font using logical fonts">
-      <change afterPath="$PROJECT_DIR$/src/com/swing/fonts/CrimewaveBB.ttf" afterDir="false" />
+    <list default="true" id="9e04f7cf-c0b6-4739-97c4-6cec31cdae4f" name="Changes" comment="loading font files">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Swing1.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Swing1.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/swing/commons/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/swing/commons/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/swing/gui/MessageListRenderer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/swing/gui/MessageListRenderer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/swing/gui/MessagePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/swing/gui/MessagePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/swing/gui/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/swing/gui/Utils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/swing/controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/swing/controller/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/swing/gui/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/swing/gui/MainFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/swing/model/Database.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/swing/model/Database.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,13 +102,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1657504845980</updated>
-    </task>
-    <task id="LOCAL-00013" summary="working with list box data">
-      <created>1657580195472</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1657580195472</updated>
     </task>
     <task id="LOCAL-00014" summary="combo boxes">
       <created>1657599444958</created>
@@ -449,7 +439,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661745636732</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="loading font files">
+      <created>1661747944155</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1661747944156</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -465,7 +462,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="retrieving values from databases" />
     <MESSAGE value="saving to a database" />
     <MESSAGE value="loading data from database" />
     <MESSAGE value="wiring in the database code" />
@@ -490,18 +486,8 @@
     <MESSAGE value="custom list renderers" />
     <MESSAGE value="responding to list selections" />
     <MESSAGE value="changing the font using logical fonts" />
-    <option name="LAST_COMMIT_MESSAGE" value="changing the font using logical fonts" />
+    <MESSAGE value="loading font files" />
+    <option name="LAST_COMMIT_MESSAGE" value="loading font files" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/com/swing/controller/Controller.java</url>
-          <line>55</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

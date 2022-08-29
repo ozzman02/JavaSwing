@@ -75,14 +75,27 @@ public class MainFrame extends JFrame {
                 preferences.put(USER_PREFERENCE_KEY, user);
                 preferences.put(PASSWORD_PREFERENCE_KEY, password);
                 preferences.putInt(PORT_PREFERENCE_KEY, port);
+                try {
+                    controller.configure(port, user, password);
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(MainFrame.this, OPEN_DATABASE_CONNECTION_ERROR_MSG,
+                            OPEN_DATABASE_CONNECTION_ERROR_TITLE, JOptionPane.ERROR_MESSAGE);
+                }
             }
         });
 
-        prefsDialog.setDefaults(
-                preferences.get(USER_PREFERENCE_KEY, ""),
-                preferences.get(PASSWORD_PREFERENCE_KEY, ""),
-                preferences.getInt(PORT_PREFERENCE_KEY, PORT_PREFERENCE_DEFAULT_VALUE)
-        );
+        String user = preferences.get(USER_PREFERENCE_KEY, "");
+        String password = preferences.get(PASSWORD_PREFERENCE_KEY, "");
+        int port = preferences.getInt(PORT_PREFERENCE_KEY, PORT_PREFERENCE_DEFAULT_VALUE);
+
+        prefsDialog.setDefaults(user, password, port);
+
+        try {
+            controller.configure(port, user, password);
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(MainFrame.this, OPEN_DATABASE_CONNECTION_ERROR_MSG,
+                    OPEN_DATABASE_CONNECTION_ERROR_TITLE, JOptionPane.ERROR_MESSAGE);
+        }
 
         fileChooser = new JFileChooser();
         fileChooser.addChoosableFileFilter(new PersonFileFilter());

@@ -15,8 +15,26 @@ public class Database {
 
     private Connection connection;
 
+    private int port;
+
+    private String user;
+
+    private String password;
+
     public Database() {
         people = new LinkedList<>();
+    }
+
+    public void configure(int port, String user, String password) throws Exception {
+        this.port = port;
+        this.user = user;
+        this.password = password;
+
+        if (connection != null) {
+            disconnect();
+            connect();
+        }
+
     }
 
     public List<Person> getPeople() {

@@ -12,6 +12,18 @@ public class Controller {
 
     private final Database database = new Database();
 
+    public void configure(int port, String user, String password) throws Exception {
+        database.configure(port, user, password);
+    }
+
+    public void connect() throws Exception {
+        database.connect();
+    }
+
+    public void disconnect() throws Exception {
+        database.disconnect();
+    }
+
     public void addPerson(FormEvent formEvent) {
         Person person = new Person(
                 formEvent.getName(),
