@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9e04f7cf-c0b6-4739-97c4-6cec31cdae4f" name="Changes" comment="multiple nested split panes">
-      <change afterPath="$PROJECT_DIR$/src/com/swing/gui/MessageListRenderer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/swing/images/Information24.gif" afterDir="false" />
+    <list default="true" id="9e04f7cf-c0b6-4739-97c4-6cec31cdae4f" name="Changes" comment="custom list renderers">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/swing/commons/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/swing/commons/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/swing/controller/MessageServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/swing/controller/MessageServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/swing/gui/MainFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/swing/gui/MainFrame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/com/swing/gui/MessagePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/swing/gui/MessagePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/com/swing/gui/TextPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/swing/gui/TextPanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,20 +41,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "/Users/ovenegas/git/JavaSwing/Swing1/src/com/swing/images",
-    "project.structure.last.edited": "Artifacts",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.sourceCode.Java"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/ovenegas/git/JavaSwing/Swing1/src/com/swing/images&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.swing.gui" />
@@ -104,13 +100,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1657504845980</updated>
-    </task>
-    <task id="LOCAL-00010" summary="laying out controls with GridBagLayout">
-      <created>1657572806864</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1657572806864</updated>
     </task>
     <task id="LOCAL-00011" summary="custom events and form submission">
       <created>1657576125397</created>
@@ -448,7 +437,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661066056575</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="custom list renderers">
+      <created>1661108216208</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1661108216209</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -464,7 +460,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="saving program data with preferences" />
     <MESSAGE value="arranging and designing dialogs and forms" />
     <MESSAGE value="connecting to sql database" />
     <MESSAGE value="retrieving values from databases" />
@@ -489,7 +484,8 @@
     <MESSAGE value="cancelling swing worker threads" />
     <MESSAGE value="setting the cursor" />
     <MESSAGE value="multiple nested split panes" />
-    <option name="LAST_COMMIT_MESSAGE" value="multiple nested split panes" />
+    <MESSAGE value="custom list renderers" />
+    <option name="LAST_COMMIT_MESSAGE" value="custom list renderers" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
