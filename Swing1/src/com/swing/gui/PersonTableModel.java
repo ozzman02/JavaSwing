@@ -1,5 +1,6 @@
 package com.swing.gui;
 
+import com.swing.model.EmploymentCategory;
 import com.swing.model.Person;
 
 import javax.swing.table.AbstractTableModel;
@@ -9,8 +10,8 @@ public class PersonTableModel extends AbstractTableModel {
 
     private List<Person> people;
 
-    private String[] columnNames = { "ID","Name","Occupation", "Age Category",
-            "Employment Category","Tax ID", "US Citizen", "Gender" };
+    private String[] columnNames = { "ID","NAME","OCCUPATION", "AGE CATEGORY",
+            "EMPLOYMENT CATEGORY","TAX ID", "US CITIZEN", "GENDER" };
 
     public PersonTableModel() {}
 
@@ -23,6 +24,9 @@ public class PersonTableModel extends AbstractTableModel {
     public boolean isCellEditable(int rowIndex, int columnIndex) {
         switch (columnIndex) {
             case 1:
+                return true;
+            case 4:
+                return true;
             case 6:
                 return true;
             default:
@@ -38,6 +42,9 @@ public class PersonTableModel extends AbstractTableModel {
             case 1:
                 person.setName((String) aValue);
                 break;
+            case 4:
+                person.setEmploymentCategory((EmploymentCategory) aValue);
+                break;
             case 6:
                 person.setUsCitizen((Boolean) aValue);
                 break;
@@ -50,14 +57,19 @@ public class PersonTableModel extends AbstractTableModel {
             case 0:
                 return Integer.class;
             case 1:
+                return String.class;
             case 2:
+                return String.class;
             case 3:
+                return String.class;
             case 4:
+                return EmploymentCategory.class;
             case 5:
-            case 7:
                 return String.class;
             case 6:
                 return Boolean.class;
+            case 7:
+                return String.class;
             default:
                 return null;
         }

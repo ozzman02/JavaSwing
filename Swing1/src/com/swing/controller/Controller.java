@@ -29,7 +29,7 @@ public class Controller {
                 formEvent.getName(),
                 formEvent.getOccupation(),
                 AgeCategory.getValueOf(formEvent.getAgeCategoryId()),
-                EmploymentCategory.getValueOf(formEvent.getEmploymentCategory()),
+                EmploymentCategory.valueOf(formEvent.getEmploymentCategory()),
                 formEvent.getTaxId(),
                 formEvent.isUsCitizen(),
                 Gender.valueOf(formEvent.getGender().toUpperCase())
